@@ -1824,6 +1824,77 @@ body[data-fund="agresivo"]{--fund-deep:#4A211D;--fund-accent:#C0524A}
 .dclt td:nth-child(2),.dclt td:nth-child(3){white-space:nowrap}
 .dclt th:nth-child(2),.dclt th:nth-child(3){white-space:nowrap}
 .dclt td:nth-child(4){padding-left:var(--v3) !important}
+
+/* ═══════════════════════════════════════════════
+   MÓVIL · drawer funcional + banner fijo
+   ═══════════════════════════════════════════════ */
+@media(max-width:1024px){
+  /* Botón de menú siempre por encima de todo */
+  .sb-toggle{display:flex !important;position:fixed;top:10px;left:12px;width:42px;height:42px;
+    z-index:1200 !important;background:#fff;border:1px solid rgba(0,0,0,.10);border-radius:12px;
+    box-shadow:0 2px 8px rgba(16,33,64,.12);align-items:center;justify-content:center;flex-direction:column;gap:4px;cursor:pointer}
+  .sb-toggle span{display:block;width:17px;height:1.6px;background:#1D1D1F;border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+  body.sb-open .sb-toggle span:nth-child(1){transform:translateY(5.6px) rotate(45deg)}
+  body.sb-open .sb-toggle span:nth-child(2){opacity:0}
+  body.sb-open .sb-toggle span:nth-child(3){transform:translateY(-5.6px) rotate(-45deg)}
+  /* Drawer */
+  .sb{position:fixed !important;top:0;left:0;height:100dvh;width:min(84vw,300px) !important;
+    transform:translateX(-100%) !important;transition:transform .3s cubic-bezier(.22,.9,.3,1) !important;
+    z-index:1100 !important;background:#fff;box-shadow:0 0 44px rgba(16,33,64,.18);
+    overflow-y:auto;-webkit-overflow-scrolling:touch;padding-top:64px}
+  body.sb-open .sb{transform:translateX(0) !important}
+  /* Velo */
+  .sb-scrim{display:block !important;position:fixed;inset:0;background:rgba(15,27,60,.42);
+    opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:1050}
+  body.sb-open .sb-scrim{opacity:1;pointer-events:auto}
+  /* El contenido no se desplaza */
+  .main{margin-left:0 !important;padding-left:0 !important;width:100% !important}
+
+  /* ── BANNER FIJO: la referencia del fondo nunca se pierde ── */
+  #ctx-summary{position:fixed !important;top:0;left:0;right:0;z-index:900 !important;
+    padding:8px 0 8px !important;background:var(--canvas) !important;
+    box-shadow:0 2px 12px rgba(16,33,64,.10)}
+  /* El contenido arranca bajo el banner fijo */
+  .main{padding-top:82px !important}
+  .discovery{position:relative;z-index:1}
+  .icb-body{margin:0 12px !important;padding:12px 14px 12px 62px !important;border-radius:14px;
+    display:block !important;box-shadow:0 3px 12px color-mix(in srgb,var(--fund-deep,#16294D) 34%,transparent) !important}
+  .icb-body::after{width:120px;height:120px;right:-30px;top:-46px}
+  .icb-fund{font-size:15px !important;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .icb-meta{margin-top:3px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .icb-meta::-webkit-scrollbar{display:none}
+  .icb-meta span{font-size:11px !important;white-space:nowrap}
+  .icb-meta span+span::before{margin:0 8px !important;height:9px}
+  /* Selector vehículo/serie bajo el banner, deslizable */
+  .discovery{padding:10px 12px 0 !important;overflow-x:auto;flex-wrap:nowrap !important;scrollbar-width:none}
+  .discovery::-webkit-scrollbar{display:none}
+
+  /* ── Contenido en una columna ── */
+  .hm-select,.hm-brief-grid,.hm-brief-cols,.hm-next-list,.ef-cols,.xs-body,
+  .pol-grid,.g2,.g3,.exec-grid,.ex-blocks,.rec-grid,.dd-facts{grid-template-columns:1fr !important}
+  .hm-index{margin-top:var(--v4)}
+  .hm-lead-name{font-size:34px !important}
+  .hm-lead-facts{grid-template-columns:1fr 1fr !important}
+  .ceo-row{grid-template-columns:1fr !important}
+  #screens{padding-left:12px;padding-right:12px}
+  .hm-eyebrow{padding-top:var(--v2)}
+  /* Tablas con scroll horizontal propio */
+  .dclt,.timing-table{display:block;overflow-x:auto;white-space:nowrap}
+  /* Escenarios apilados */
+  .scn{flex-wrap:wrap;gap:10px}
+  .scn-t{flex:1 1 100%}.scn-bar{flex:1 1 100%;order:3}
+  .scn-cap,.scn-d{flex:1 1 46%;text-align:left}
+  /* Gráficos táctiles */
+  .chart-svg{touch-action:pan-y}
+}
+@media(max-width:640px){
+  .icb-fund{font-size:14px !important}
+  .hm-lead-name{font-size:28px !important}
+  .hm-lead-facts{grid-template-columns:1fr !important}
+  .fundgrid{grid-template-columns:1fr !important}
+  .ef-docs{columns:1}
+}
+
 </style>
 </head>
 <body>
@@ -3873,7 +3944,7 @@ function showScreen(id,silent){
   if(!silent){closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}
 }
 function goNav(id){go(id);if(window.innerWidth<=1024)closeSidebar();}
-function toggleSidebar(){document.body.classList.toggle('sb-open');}
+function toggleSidebar(){const o=document.body.classList.toggle('sb-open');document.body.style.overflow=o?'hidden':'';}
 function closeSidebar(){document.body.classList.remove('sb-open');}
 function renderSidebarActive(){
   const el=document.getElementById('sb-active');if(!el)return;
@@ -4040,8 +4111,6 @@ function mmSimulate(){
 function openMoreSheet(){const s=document.getElementById('more-sheet');s.classList.add('open');document.body.style.overflow='hidden';}
 function closeMoreSheet(){document.getElementById('more-sheet').classList.remove('open');document.body.style.overflow='';}
 function goFromSheet(id){closeMoreSheet();go(id);}
-function toggleSidebar(){}
-function closeSidebar(){}
 
 /* INIT */
 window.addEventListener('load',()=>{
