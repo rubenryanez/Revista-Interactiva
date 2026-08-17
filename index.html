@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1B3C'/%3E%3Cpath d='M14 42 L24 30 L33 36 L50 18' stroke='%23fff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='50' cy='18' r='4.5' fill='%233F8F68'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1B3C'/%3E%3Cpath d='M14 42 L24 30 L33 36 L50 18' stroke='%23fff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='50' cy='18' r='4.5' fill='%233F8F68'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0F1B3C">
 <title>Revista Dinámicos Interactiva · LarrainVial AM × Consorcio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,22 +42,22 @@
 body{font-family:'Manrope','Inter',-apple-system,'Segoe UI',sans-serif;letter-spacing:.005em;background:var(--bg);color:var(--text-1);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .shell{display:flex;min-height:100vh}
 /* ═══ BOTTOM DOCK NAVIGATION ═══ */
-.dock{position:fixed;bottom:0;left:0;right:0;height:68px;background:var(--navy);border-top:1px solid var(--navy-700);display:flex;align-items:center;gap:var(--s4);padding:0 var(--s6);z-index:300;box-shadow:0 -8px 32px rgba(16,33,64,.18)}
-.dock-brand{flex-shrink:0;padding-right:var(--s4);border-right:1px solid rgba(255,255,255,.12)}
-.dock-brand .name{font-size:12px;font-weight:800;letter-spacing:.02em;color:#fff;line-height:1.25;text-transform:uppercase}
-.dock-items{display:flex;align-items:stretch;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none;height:100%}
-.dock-items::-webkit-scrollbar{display:none}
-.dock-sep{width:1px;background:rgba(255,255,255,.12);margin:16px 6px}
-.nav-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 13px;font-size:10.5px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.62);cursor:pointer;border-top:2px solid transparent;transition:all .15s;user-select:none;white-space:nowrap;height:100%}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,.05)}
-.nav-item.active{color:#fff;border-top-color:#fff;background:rgba(255,255,255,.08)}
-.nav-item .ni{width:19px;height:19px;display:flex;align-items:center;justify-content:center}
-.nav-item .ni svg{width:19px;height:19px}
-.nav-item .nl{line-height:1}
-.btn-meeting{flex-shrink:0;display:flex;align-items:center;gap:7px;padding:9px 16px;background:#fff;color:var(--navy);border:none;border-radius:var(--r3);font-weight:700;font-size:12px;cursor:pointer;transition:all .15s;font-family:inherit}
-.btn-meeting:hover{background:var(--navy-100);transform:translateY(-1px)}
-.main{margin-left:0;flex:1;display:flex;flex-direction:column;min-height:100vh;padding-bottom:84px;min-width:0}
-.ctx-bar{height:60px;background:rgba(255,255,255,.85);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 var(--s8);gap:var(--s4);position:sticky;top:0;z-index:100}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main{margin-left:0;flex:1;display:flex;flex-direction:column;min-height:100vh;min-width:0}
+.ctx-bar{height:48px;background:rgba(255,255,255,.9);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 var(--s8);gap:var(--s4);position:sticky;top:0;z-index:100}
 .ctx-title{font-size:14px;font-weight:600;letter-spacing:-.01em}
 .ctx-right{margin-left:auto;display:flex;align-items:center;gap:var(--s3)}
 .ctx-edition{font-size:12px;color:var(--text-3);font-weight:500}
@@ -156,7 +159,7 @@ body.meeting-mode .btn-mm{background:var(--conv);color:#fff;border-color:var(--c
 .ev-hdr{display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s2)}
 .impact-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .impact-h{background:var(--neg)}.impact-m{background:var(--warn)}.impact-l{background:var(--pos)}
-.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r4);overflow:hidden;padding:var(--s5)}
+.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r4);overflow:hidden;padding:var(--v3)}
 .chart-svg{width:100%;display:block}
 .chart-legend{display:flex;gap:var(--s5);flex-wrap:wrap;margin-top:var(--s4);font-size:12px;font-weight:600}
 .legend-item{display:flex;align-items:center;gap:var(--s2)}
@@ -305,7 +308,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 
 
 
-.nav-div{width:1px;height:26px;background:rgba(255,255,255,.16);margin:0 var(--s3);align-self:center;flex:0 0 auto}
+
 /* ══ ESTILO EDITORIAL · menos cajas, más jerarquía ══ */
 /* Las tarjetas dejan de ser cajas y pasan a ser secciones separadas por regla fina */
 #screen-portfolio .card,#screen-dcl .card,#screen-timing .card{
@@ -460,19 +463,306 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 
 
 /* Chip redundante: la Institutional Context Bar ya declara el fondo activo */
-#ctx-profile-label{display:none}
+#ctx-profile-label,.ctx-client{display:none}
+
+
+
+/* ══ CONTINUIDAD NARRATIVA ══ */
+.nxt{margin-top:var(--v4);padding-top:var(--v3);border-top:1px solid var(--navy)}
+.nxt a{display:block;cursor:pointer;text-decoration:none;transition:padding-left .18s ease}
+.nxt a:hover{padding-left:6px}
+.nxt-k{display:block;font-size:var(--t-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#94A3B4;margin-bottom:7px}
+.nxt-t{display:block;font-size:22px;font-weight:300;letter-spacing:-.02em;color:var(--navy);margin-bottom:3px}
+.nxt-d{display:block;font-size:var(--t-sm);color:var(--text-3);font-weight:300}
+#screen-timing .chart-wrap{padding:var(--v3) 0}
+#screen-timing .chart-svg{max-height:218px}
+
+#timing-chart{max-height:380px !important;height:380px}
+#dcl-chart{max-height:340px !important;height:340px}
+#perf-chart{max-height:300px !important;height:300px}
+
+#screen-timing .thesis-q{font-size:27px;margin-bottom:var(--v3)}
+#screen-timing .tmx{margin-bottom:var(--v3)!important}
+/* ══ TIMING · escenarios como tarjetas ══ */
+.sc-grid{display:flex;flex-direction:column;gap:var(--v2)}
+.scn{display:flex;align-items:center;gap:var(--v4);width:100%;
+  background:#fff;border:1px solid #E4E9F0;border-radius:12px;padding:var(--v3) var(--v4);
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.scn:hover{border-color:#C6D0DC;box-shadow:0 2px 12px rgba(16,33,64,.06)}
+.scn-base{border-color:#3F8F68;background:#FBFDFC}
+.scn-on{border-color:var(--navy);box-shadow:0 4px 18px rgba(16,33,64,.10);transform:translateY(-1px)}
+.scn-t{flex:0 0 230px;font-size:var(--t-body);font-weight:400;color:var(--text-1);line-height:1.35}
+.scn-base .scn-t{font-weight:600}
+.scn-bar{flex:1;min-width:80px;height:6px;background:#F1F5F9;border-radius:99px;overflow:hidden}
+.scn-bar div{height:100%;border-radius:99px;transition:width .45s cubic-bezier(.22,.9,.3,1)}
+.scn-cap{flex:0 0 150px;font-size:21px;font-weight:400;text-align:right;font-feature-settings:'tnum';
+  color:var(--text-1);letter-spacing:-.02em}
+.scn-base .scn-cap{font-weight:600}
+.scn-d{flex:0 0 160px;text-align:right;font-feature-settings:'tnum'}
+.scn-ref{font-size:var(--t-sm);color:#3F8F68;font-weight:600}
+.scn-loss{font-size:var(--t-h3);color:#C0524A;font-weight:500;letter-spacing:-.01em}
+.scn-lab{display:block;font-size:var(--t-label);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:#94A3B4;margin-bottom:3px}
+@media(max-width:900px){.scn{flex-wrap:wrap;gap:var(--v2)}.scn-t{flex:1 1 100%}.scn-bar{flex:1 1 100%;order:3}
+  .scn-cap,.scn-d{flex:1 1 45%;text-align:left}}
+/* ══ TOOLTIP INSTITUCIONAL ══ */
+.chart-tip{position:absolute;transform:translateX(-50%);background:#fff;border:1px solid #D5DCE6;border-radius:var(--rE);
+  padding:9px 12px;box-shadow:0 2px 10px rgba(16,33,64,.08);pointer-events:none;z-index:5;min-width:150px}
+.ct-date{font-size:var(--t-label);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#94A3B4;margin-bottom:6px}
+.ct-row{display:flex;align-items:center;gap:7px;padding:2px 0}
+.ct-dot{width:7px;height:7px;border-radius:50%;flex:0 0 auto}
+.ct-name{font-size:var(--t-xs);color:var(--text-2);flex:1;white-space:nowrap}
+.ct-val{font-size:var(--t-xs);font-weight:700;color:var(--text-1);font-feature-settings:'tnum';white-space:nowrap}
+
+
+
+
+
+
+/* ══ FICHA · pestañas ══ */
+.pf-tabs{display:flex;gap:var(--v5);border-bottom:1px solid #E4E9F0;margin-bottom:var(--v5)}
+.pf-tab{background:none;border:none;font-family:inherit;font-size:var(--t-body);font-weight:400;color:#94A3B4;
+  padding:0 0 var(--v2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s ease,border-color .2s ease}
+.pf-tab:hover{color:var(--text-2)}
+.pf-tab.on{color:var(--navy);font-weight:600;border-bottom-color:var(--navy)}
+
+
+
+/* ══ Modo Reunión · desglose de composición ══ */
+.mm-breakdown{margin-top:var(--v3);padding-top:var(--v3);border-top:1px solid rgba(255,255,255,.16)}
+.mmb-row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0}
+.mmb-rowtop{margin-top:var(--v2);padding-top:var(--v2);border-top:1px solid rgba(255,255,255,.12)}
+.mmb-k{font-size:13px;font-weight:600;color:#fff}
+.mmb-v{font-size:19px;font-weight:600;color:#fff;font-feature-settings:'tnum'}
+.mmb-sub{display:flex;justify-content:space-between;padding:4px 0 4px 14px;font-size:12.5px;color:rgba(255,255,255,.66)}
+.mmb-sub b{color:rgba(255,255,255,.9);font-weight:600;font-feature-settings:'tnum'}
+.mmb-pos{padding:2px 0 6px 14px;font-size:11.5px;color:rgba(255,255,255,.45)}
+.mmb-pos b{color:rgba(255,255,255,.72);font-weight:600}
+/* ══ HOME · escala y peso ══ */
+.hm-lead-name{font-size:56px;font-weight:600;letter-spacing:-.032em}
+.hm-lead-k{font-weight:700;letter-spacing:.16em}
+.hm-lead-obj{font-size:20px;font-weight:400;color:var(--text-2);margin-bottom:var(--v3)}
+.hm-lead-facts{gap:var(--v5);padding-top:var(--v2)}
+.hm-lead-facts dd{font-size:18px;font-weight:600}
+.hm-select{gap:var(--v5);padding-bottom:var(--v4);margin-bottom:var(--v5)}
+.hm-index{padding-top:0}
+.hm-index-k{font-weight:700;letter-spacing:.16em;padding-bottom:var(--v2)}
+.hm-idx-item{padding:16px 0 16px 14px}
+.hm-idx-n{font-size:19px;font-weight:500}
+.hm-idx-item.on .hm-idx-n{font-weight:700}
+.hm-idx-k{font-size:12px}
+.hm-idx-v{font-size:12.5px;font-weight:600}
+.hm-brief-k,.hm-next-k,.home-sec-k{font-weight:700}
+.hm-brief-lead{font-size:29px;font-weight:600;letter-spacing:-.026em}
+.hm-brief{padding-bottom:var(--v5);margin-bottom:var(--v5)}
+.hm-brief-cols h3{font-weight:700}
+.hm-next-list span{font-weight:600}
+.hm-eyebrow{padding:var(--v3) 0 var(--v2);font-weight:600}
+
+
+
+/* ══════ CORRECCIÓN · clases reales ══════ */
+/* Banner: el selector va DENTRO del pill navy, a la derecha */
+.icb-body{position:relative}
+.discovery{position:static !important;transform:none;padding:14px var(--s8) 0;background:transparent;border:none;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+@media(min-width:1281px){.discovery{padding-inline:max(var(--s8),calc((100vw - 1280px)/2))}}
+/* Índice de fondos: tarjetas reales */
+.hm-index ul{display:flex;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0}
+.hm-fund{display:flex;align-items:stretch;gap:0;width:100%;text-align:left;font-family:inherit;cursor:pointer;
+  background:#fff;border:var(--card-bd);border-radius:var(--card-r-sm);padding:0;overflow:hidden;
+  box-shadow:0 1px 2px rgba(16,33,64,.04);transition:transform .2s ease,box-shadow .2s ease}
+.hm-fund:hover{transform:translateX(3px);box-shadow:var(--card-sh)}
+.fi-conservador{--pc:#8A94A6}.fi-moderado{--pc:#5B9BC4}.fi-balanceado{--pc:#2F5FA8}
+.fi-crecimiento{--pc:#3F8F68}.fi-agresivo{--pc:#C0524A}
+.hf-rule{flex:0 0 4px;background:var(--pc)}
+.hf-body{flex:1;padding:15px 18px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.hf-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hf-n{font-size:17px;font-weight:700;color:#1D1D1F;letter-spacing:-.015em}
+.hf-d{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.hf-d span{font-size:11.5px;color:#86868B}
+.hf-d b{font-size:12.5px;font-weight:700;color:#1D1D1F;font-feature-settings:'tnum'}
+.hm-fund.on,.hm-fund[aria-pressed="true"]{background:#0F1B3C;border-color:#0F1B3C;box-shadow:0 4px 16px rgba(15,27,60,.24)}
+.hm-fund.on .hf-n,.hm-fund[aria-pressed="true"] .hf-n{color:#fff}
+.hm-fund.on .hf-d span,.hm-fund[aria-pressed="true"] .hf-d span{color:rgba(255,255,255,.5)}
+.hm-fund.on .hf-d b,.hm-fund[aria-pressed="true"] .hf-d b{color:#fff}
+.hm-fund.on .hf-tag,.hm-fund[aria-pressed="true"] .hf-tag{background:rgba(255,255,255,.16);color:#fff}
+.hf-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pc);
+  background:color-mix(in srgb,var(--pc) 12%,#fff);padding:3px 9px;border-radius:99px;white-space:nowrap}
+/* Carta del Comité (.cmt) como tarjeta */
+.cmt{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  padding:var(--v5);margin-top:var(--v4);border-bottom:none}
+.cmt section,.cmt .cmt-col{background:#F7F8FA;border-radius:var(--card-r-sm);padding:16px 18px}
+.cmt h3{border-bottom:none;padding-bottom:0;margin-bottom:10px;font-weight:700}
+/* ══════ HOME · fondos como tarjetas (ref. Wander) ══════ */
+.hm-select{grid-template-columns:minmax(0,1fr) 400px;gap:var(--v5);border-bottom:none;padding-bottom:0}
+/* Fondo seleccionado: tarjeta protagonista */
+.hm-lead{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  padding:var(--v5);position:relative;overflow:hidden}
+.hm-lead::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pc)}
+.hm-lead-k{font-weight:700;letter-spacing:.14em;margin-bottom:var(--v2)}
+.hm-lead-name{font-size:46px;font-weight:700;letter-spacing:-.032em;margin-bottom:var(--v2)}
+.hm-lead-obj{font-size:17px;font-weight:400;line-height:1.5;margin-bottom:var(--v4);max-width:44ch}
+.hm-lead-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--v2);padding:var(--v3) 0 0;border-top:1px solid rgba(0,0,0,.07)}
+.hm-lead-facts div{background:#F7F8FA;border-radius:var(--card-r-sm);padding:14px 16px}
+.hm-lead-facts dt{font-size:11px;font-weight:700;letter-spacing:.1em;color:#86868B;margin-bottom:4px}
+.hm-lead-facts dd{font-size:17px;font-weight:700;color:#1D1D1F}
+/* Índice: tarjetas individuales, no lista */
+.hm-index{background:transparent;padding:0}
+.hm-index-k{font-weight:700;letter-spacing:.14em;border-bottom:none;padding-bottom:var(--v2);color:#86868B}
+.hm-index ul{display:flex;flex-direction:column;gap:10px}
+.hm-idx-item{background:#fff;border:var(--card-bd);border-radius:var(--card-r-sm);padding:16px 18px;
+  border-left:4px solid var(--pc);box-shadow:0 1px 2px rgba(16,33,64,.04);
+  transition:transform .2s ease,box-shadow .2s ease;cursor:pointer}
+.hm-idx-item:hover{transform:translateX(3px);box-shadow:var(--card-sh)}
+.hm-idx-item.on{background:#0F1B3C;border-color:#0F1B3C;box-shadow:0 4px 16px rgba(15,27,60,.24)}
+.hm-idx-item.on .hm-idx-n{color:#fff}
+.hm-idx-item.on .hm-idx-k{color:rgba(255,255,255,.5)}
+.hm-idx-item.on .hm-idx-v{color:rgba(255,255,255,.92)}
+.hm-idx-item.on .hm-idx-tag{color:#fff;background:rgba(255,255,255,.16);padding:3px 9px;border-radius:99px}
+.hm-idx-n{font-size:18px;font-weight:700;color:#1D1D1F;letter-spacing:-.015em}
+.hm-idx-r{margin-top:8px}
+.hm-idx-k{font-size:11.5px;color:#86868B}
+.hm-idx-v{font-size:12.5px;font-weight:700;color:#1D1D1F}
+/* Carta del Comité como tarjeta */
+.hm-brief{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  padding:var(--v5);border-bottom:none;margin-top:var(--v4)}
+.hm-brief-grid{gap:var(--v5)}
+.hm-brief-lead{font-size:26px;font-weight:700;letter-spacing:-.024em;line-height:1.3}
+.hm-brief-cols section{background:#F7F8FA;border-radius:var(--card-r-sm);padding:16px 18px}
+.hm-brief-cols h3{border-bottom:none;padding-bottom:0;margin-bottom:10px;font-weight:700}
+/* Accesos como tarjetas */
+.hm-next-list{gap:12px}
+.hm-next-list button{background:#fff;border:var(--card-bd);border-radius:var(--card-r-sm);
+  padding:18px 20px;box-shadow:0 1px 2px rgba(16,33,64,.04);transition:transform .2s ease,box-shadow .2s ease}
+.hm-next-list button:hover{transform:translateY(-2px);box-shadow:var(--card-sh);padding-left:20px}
+.hm-next-list span{font-weight:700;color:#1D1D1F}
+
+/* ══════ FICHA · hero con presencia ══════ */
+.fund-hero,#port-hero>*{border-radius:var(--card-r)}
+.fund-hero{background:#0F1B3C;padding:var(--v5) var(--v6);box-shadow:0 8px 28px rgba(15,27,60,.24);position:relative;overflow:hidden}
+.fund-hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;
+  background:var(--pc);opacity:.14}
+.fh-title,.fh-name{color:#fff;font-weight:700;letter-spacing:-.028em}
+.fund-status{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  border-left:5px solid #3F8F68;padding:var(--v4)}
+/* Política, mercados, universo, riesgos: tarjetas con relieve */
+.pol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.pol-item{background:#F7F8FA !important;border:1px solid rgba(0,0,0,.06) !important;
+  border-radius:var(--card-r-sm);padding:18px 20px !important;box-shadow:none}
+.pol-k{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:#86868B;margin-bottom:8px}
+.pol-v{font-size:13.5px;line-height:1.6;color:#3A3A3C}
+.ex-block{padding:var(--v4);background:#fff}
+.ex-block-t{font-weight:700;color:#1D1D1F}
+/* ══════ SISTEMA DE TARJETAS (ref. Wander) ══════ */
+:root{--card-r:20px;--card-r-sm:14px;
+  --card-sh:0 1px 2px rgba(16,33,64,.04),0 8px 24px rgba(16,33,64,.055);
+  --card-sh-h:0 2px 4px rgba(16,33,64,.05),0 16px 40px rgba(16,33,64,.10);
+  --card-bd:1px solid rgba(0,0,0,.07);--canvas:#F2F3F5}
+body{background:var(--canvas)}
+.main{background:var(--canvas)}
+#screens{background:transparent}
+/* Superficies elevadas */
+.card,.dcard,.doc-card,.scn,.dcla,.rec-item,.fcard,.bento-tile,.ex-block,.pol-item{
+  background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh)}
+.card{padding:var(--v4)}
+/* Banner: pill oscuro flotante, no barra pegada */
+#ctx-summary{background:transparent;border:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+  position:relative;padding:var(--v3) 0 0}
+.icb-body{margin:0 var(--s8);padding:22px 26px;background:#0F1B3C;border-radius:var(--card-r);
+  box-shadow:0 4px 16px rgba(15,27,60,.22);display:flex;align-items:center;justify-content:space-between;gap:var(--v4);flex-wrap:wrap}
+.icb-accent{position:absolute;left:calc(var(--s8) + 0px);top:var(--v3);bottom:0;width:4px;border-radius:4px 0 0 4px;z-index:2}
+.icb-fund{font-size:20px;font-weight:600;letter-spacing:-.02em;color:#fff;text-transform:none;line-height:1.2}
+.icb-meta{margin-top:6px;display:flex;flex-wrap:wrap}
+.icb-meta span{font-size:12.5px;font-weight:400;color:rgba(255,255,255,.62)}
+.icb-meta span+span::before{background:rgba(255,255,255,.22);margin:0 11px}
+@media(min-width:1281px){.icb-body{margin-inline:max(var(--s8),calc((100vw - 1280px)/2))}
+  .icb-accent{left:max(var(--s8),calc((100vw - 1280px)/2))}}
+/* Selector de vehículo como pill blanco flotante dentro del banner */
+.discovery{position:static;padding:0;background:transparent;border:none}
+
+/* ══ CONVICCIONES · sin círculos, título reencuadrado ══ */
+.cvcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--v2);margin-bottom:var(--v2)}
+.cvcard-q,.cvcard-title{font-size:19px;font-weight:600;letter-spacing:-.018em;line-height:1.32;color:#1D1D1F;margin:0}
+.cvcard{padding:var(--v4);border-radius:18px;border:1px solid rgba(0,0,0,.07);background:#fff;
+  box-shadow:0 1px 2px rgba(16,33,64,.04),0 8px 24px rgba(16,33,64,.05);transition:transform .22s ease,box-shadow .22s ease}
+.cvcard:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(16,33,64,.05),0 14px 34px rgba(16,33,64,.09)}
+/* ══ BANNER APPLE ══ */
+#ctx-summary{background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid rgba(0,0,0,.10);
+  position:sticky;top:0;z-index:80}
+.icb-accent{width:2px;opacity:.9}
+.icb-body{padding:20px var(--s8) 18px calc(var(--s8) + 8px);padding-right:440px}
+.icb-fund{font-size:21px;font-weight:500;letter-spacing:-.018em;text-transform:none;color:#1D1D1F;line-height:1.15}
+.icb-meta{margin-top:6px;gap:0}
+.icb-meta span{font-size:13px;font-weight:400;color:#86868B;letter-spacing:-.004em}
+.icb-meta span+span::before{content:'';width:1px;height:10px;background:rgba(0,0,0,.14);margin:0 12px;vertical-align:-1px}
+@media(min-width:1281px){.icb-body{padding-inline:max(var(--s8),calc((100vw - 1280px)/2))}}
+/* ══ CABECERA UNIFICADA ══ */
+.ctx-bar{display:none}
+.discovery{border-bottom:none;padding:0;background:transparent;position:absolute;right:max(var(--s8),calc((100vw - 1280px)/2));top:22px;z-index:90}
+.discovery .label,.discovery>span:first-child{display:none}
+#ctx-summary{position:relative;padding-top:var(--v3);padding-bottom:var(--v3)}
+.icb-body{padding-top:var(--v3);padding-bottom:var(--v3);padding-right:420px}
+.icb-fund{font-size:19px}
+@media(max-width:1100px){.discovery{position:static;padding:10px var(--s8);border-bottom:1px solid var(--border);background:var(--surface)}
+  .icb-body{padding-right:var(--s8)}}
+/* ══ FIX · slider visible estilo Apple ══ */
+input[type=range]#timing-slider{-webkit-appearance:none;appearance:none;width:100%;height:4px;
+  background:linear-gradient(to right,var(--navy) 0%,var(--navy) var(--p,0%),#E4E9F0 var(--p,0%),#E4E9F0 100%) !important;
+  border-radius:99px;outline:none;cursor:pointer;margin:var(--v3) 0}
+input[type=range]#timing-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+  width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid #D5DCE6;
+  box-shadow:0 1px 4px rgba(16,33,64,.18);cursor:grab;transition:transform .15s ease}
+input[type=range]#timing-slider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.08)}
+input[type=range]#timing-slider::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;
+  border:1px solid #D5DCE6;box-shadow:0 1px 4px rgba(16,33,64,.18);cursor:grab}
+.slider-scale{display:flex;justify-content:space-between;margin-top:6px}
+.slider-scale span{font-size:var(--t-label);font-weight:500;color:#94A3B4;font-feature-settings:'tnum'}
+/* ══ FIX · Costo de decidir: composición tipográfica sobre blanco ══ */
+.cost-hero{background:#fff !important;border:none !important;border-top:2px solid var(--navy);border-radius:0;
+  padding:var(--v4) 0 var(--v5);color:var(--text-1) !important;box-shadow:none}
+.cost-hero *{color:inherit}
+.cost-hero .cost-label,.cost-hero .ch-k{font-size:var(--t-label) !important;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:#94A3B4 !important;margin-bottom:var(--v2)}
+.cost-hero .cost-value,.cost-hero .ch-v{font-size:48px !important;font-weight:300;letter-spacing:-.035em;line-height:1}
+.cost-hero .cost-sub,.cost-hero .ch-s{font-size:var(--t-sm) !important;color:var(--text-3) !important;
+  margin-top:var(--v2);font-weight:300;max-width:56ch}
+/* ══ FIX · Modo Reunión: contraste ══ */
+.mm-hero{background:var(--navy) !important;border-radius:var(--rE);padding:var(--v5) var(--v6)}
+.mm-hero,.mm-hero *{color:#fff}
+.mm-eyebrow{color:rgba(255,255,255,.55) !important}
+.mm-profile{color:#fff !important}
+.mm-obj,.mm-hero .mm-sub{color:rgba(255,255,255,.72) !important}
+/* ══ FASE 3 · banner compacto ══ */
+.ctx-bar{padding-top:10px;padding-bottom:10px;min-height:0}
+.discovery{padding-top:9px;padding-bottom:9px}
+.icb-body{padding-top:14px;padding-bottom:14px}
+.icb-fund{font-size:17px}
+.icb-meta{margin-top:5px}
+.hm-eyebrow{padding:var(--v3) 0 var(--v2)}
+/* ══ FASE 3 · índice de fondos más legible ══ */
+.hm-idx-item{padding:13px 0 13px 12px;border-left:2px solid transparent;transition:border-color .18s ease,background .18s ease}
+.hm-idx-item:hover{background:#FAFBFC}
+.hm-idx-item.on{border-left-color:var(--pc);background:#FAFBFC}
+.hm-idx-n{font-size:var(--t-h3);font-weight:400;color:var(--text-1)}
+.hm-idx-item.on .hm-idx-n{font-weight:600;color:var(--pc)}
+.hm-idx-tag{font-size:var(--t-label);font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pc)}
+.hm-idx-r{display:flex;justify-content:space-between;gap:var(--v2);margin-top:5px}
+.hm-idx-k{font-size:var(--t-xs);color:#94A3B4}
+.hm-idx-v{font-size:var(--t-xs);font-weight:600;color:var(--text-2);font-feature-settings:'tnum'}
 /* ══════ v10 · HOME EDITORIAL ══════ */
 #screen-home{padding-bottom:var(--v7)}
-.hm-eyebrow{font-size:var(--t-label);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#94A3B4;padding:var(--v5) 0 var(--v4)}
+.hm-eyebrow{font-size:var(--t-label);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#94A3B4;padding:var(--v3) 0 var(--v3)}
 /* — Selector: titular + índice — */
-.hm-select{display:grid;grid-template-columns:minmax(0,1fr) 264px;gap:var(--v7);align-items:start;
-  padding-bottom:var(--v5);border-bottom:1px solid #E4E9F0;margin-bottom:var(--v6)}
+.hm-select{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--v6);align-items:start;
+  padding-bottom:var(--v4);border-bottom:1px solid #E4E9F0;margin-bottom:var(--v4)}
 .hl-conservador{--pc:#8A94A6}.hl-moderado{--pc:#5B9BC4}.hl-balanceado{--pc:#2F5FA8}
 .hl-crecimiento{--pc:#3F8F68}.hl-agresivo{--pc:#C0524A}
 .hm-lead-k{font-size:var(--t-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--pc);margin-bottom:var(--v2)}
-.hm-lead-name{font-size:64px;font-weight:200;letter-spacing:-.04em;line-height:.98;margin:0 0 var(--v3);color:var(--navy)}
-.hm-lead-obj{font-size:19px;font-weight:300;line-height:1.5;color:var(--text-2);margin:0 0 var(--v4);max-width:38ch}
-.hm-lead-facts{display:flex;gap:var(--v6);margin:0;padding-top:var(--v3);border-top:1px solid #E4E9F0}
+.hm-lead-name{font-size:52px;font-weight:200;letter-spacing:-.04em;line-height:1;margin:0 0 var(--v2);color:var(--navy)}
+.hm-lead-obj{font-size:17px;font-weight:300;line-height:1.5;color:var(--text-2);margin:0 0 var(--v3);max-width:40ch}
+.hm-lead-facts{display:grid;grid-template-columns:repeat(2,auto);justify-content:start;gap:var(--v2) var(--v6);margin:0;padding-top:var(--v3);border-top:1px solid #E4E9F0}
 .hm-lead-facts div{display:flex;flex-direction:column;gap:5px}
 .hm-lead-facts dt{font-size:var(--t-label);font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:#94A3B4}
 .hm-lead-facts dd{margin:0;font-size:var(--t-h3);font-weight:400;color:var(--text-1)}
@@ -502,8 +792,8 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 /* — Profundizar — */
 .hm-next-k{font-size:var(--t-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#94A3B4;margin-bottom:var(--v2)}
 .hm-next-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 var(--v6)}
-.hm-next-list button{display:flex;flex-direction:column;gap:3px;width:100%;text-align:left;background:none;border:none;
-  border-bottom:1px solid #EFF3F7;padding:var(--v3) 0;cursor:pointer;font-family:inherit;transition:padding-left .18s ease}
+.hm-next-list button{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;background:none;border:none;
+  border-bottom:1px solid #EFF3F7;padding:11px 0;cursor:pointer;font-family:inherit;transition:padding-left .18s ease}
 .hm-next-list button:hover{padding-left:6px}
 .hm-next-list span{font-size:var(--t-h3);font-weight:400;color:var(--navy)}
 .hm-next-list em{font-style:normal;font-size:var(--t-xs);color:#94A3B4;line-height:1.4}
@@ -547,6 +837,87 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 @media(max-width:1200px){.fundgrid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:820px){.fundgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.fundgrid{grid-template-columns:1fr}.fcard-obj{min-height:0}.fcard.on{transform:none}}
+
+
+
+/* ══ CARTA DEL COMITÉ · composición editorial ══ */
+.cmt{padding-bottom:var(--v4);border-bottom:1px solid #E4E9F0;margin-bottom:var(--v4)}
+.cmt-k{font-size:var(--t-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#94A3B4;
+  padding-bottom:var(--v2);border-bottom:1px solid var(--navy);margin-bottom:var(--v4)}
+.cmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--v5);margin-bottom:var(--v4)}
+.cmt-s h3{font-size:var(--t-label);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ctx-fund-color,#2F5FA8);margin:0 0 var(--v2)}
+.cmt-s p{font-size:var(--t-sm);line-height:1.65;color:var(--text-2);margin:0;font-weight:300}
+.cmt-dec{font-size:var(--t-h3)!important;font-weight:400!important;color:var(--text-1)!important;line-height:1.4!important;margin-bottom:var(--v2)!important}
+.cmt-s ul{list-style:none;margin:var(--v2) 0 0;padding:0}
+.cmt-s li{font-size:var(--t-sm);line-height:1.5;color:var(--text-2);padding:4px 0 4px 14px;position:relative;font-weight:300}
+.cmt-s li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:1px;background:#B4BECC}
+.cmt-mkt{display:flex;flex-wrap:wrap;gap:var(--v2) var(--v3);margin-top:var(--v3);padding-top:var(--v2);border-top:1px solid #EFF3F7}
+.cmt-mkt span{display:flex;flex-direction:column;gap:1px;font-size:var(--t-sm);font-weight:600;color:var(--text-1);font-feature-settings:'tnum'}
+.cmt-mkt b{font-size:var(--t-label);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#94A3B4}
+.cmt-next{margin-top:var(--v3)!important;padding-top:var(--v2);border-top:1px solid #EFF3F7}
+.cmt-next span{display:block;font-size:var(--t-label);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#94A3B4;margin-bottom:5px}
+.cmt-end{display:flex;gap:var(--v4);align-items:baseline;padding-top:var(--v4);border-top:1px solid #E4E9F0}
+.cmt-endk{flex:0 0 auto;font-size:var(--t-label);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#94A3B4}
+.cmt-end p{margin:0;font-size:22px;font-weight:300;letter-spacing:-.018em;line-height:1.4;color:var(--navy);max-width:52ch}
+@media(max-width:1000px){.cmt-grid{grid-template-columns:1fr;gap:var(--v4)}.cmt-end{flex-direction:column;gap:var(--v2)}.cmt-end p{font-size:18px}}
+/* ══ ÍNDICE EDITORIAL DE FONDOS ══ */
+.hm-index{padding-top:6px}
+.hm-index ul{list-style:none;margin:0;padding:0}
+.hm-fund{display:grid;grid-template-columns:2px 1fr;gap:12px;width:100%;text-align:left;background:none;border:none;
+  border-bottom:1px solid #EFF3F7;padding:11px 0;cursor:pointer;font-family:inherit;
+  transition:padding-left .18s ease,background .18s ease}
+.hm-fund:hover{padding-left:6px}
+.fi-conservador{--pc:#8A94A6}.fi-moderado{--pc:#5B9BC4}.fi-balanceado{--pc:#2F5FA8}
+.fi-crecimiento{--pc:#3F8F68}.fi-agresivo{--pc:#C0524A}
+.hf-rule{background:#E4E9F0;transition:background .18s ease}
+.hm-fund:hover .hf-rule{background:var(--pc)}
+.hm-fund.on{background:#FAFBFC;padding-left:8px}
+.hm-fund.on .hf-rule{background:var(--pc);width:3px}
+.hf-body{display:flex;flex-direction:column;gap:5px;min-width:0}
+.hf-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.hf-n{font-size:var(--t-h3);font-weight:400;color:var(--text-2);transition:color .18s ease,font-weight .18s ease}
+.hm-fund.on .hf-n{font-weight:600;color:var(--pc)}
+.hf-on{font-size:var(--t-label);font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--pc);white-space:nowrap}
+.hf-d{display:flex;justify-content:space-between;gap:10px;font-size:var(--t-label);color:#94A3B4}
+.hf-d b{font-weight:600;color:var(--text-2);font-feature-settings:'tnum';white-space:nowrap}
+.hm-select{grid-template-columns:minmax(0,1fr) 300px}
+@media(max-width:1100px){.hm-select{grid-template-columns:1fr}}
+/* ══════ v12 · SIDEBAR INSTITUCIONAL ══════ */
+.sb{position:fixed;top:0;left:0;bottom:0;width:236px;background:#fff;border-right:1px solid #E4E9F0;
+  display:flex;flex-direction:column;padding:var(--v4) 0 var(--v3);z-index:60;overflow-y:auto}
+.sb-brand{padding:0 var(--v3) var(--v4)}
+.sb-brand-t{font-size:15px;font-weight:400;letter-spacing:-.01em;color:var(--navy);line-height:1.2}
+.sb-brand-s{font-size:var(--t-label);font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#94A3B4;margin-top:5px}
+.sb-active{display:flex;gap:10px;align-items:flex-start;margin:0 var(--v3) var(--v4);padding-top:var(--v3);border-top:1px solid #E4E9F0}
+.sba-rule{width:2px;align-self:stretch;min-height:30px;flex:0 0 auto}
+.sba-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sba-n{font-size:var(--t-sm);font-weight:600;color:var(--navy);line-height:1.25}
+.sba-s{font-size:var(--t-label);color:#94A3B4;letter-spacing:.04em}
+.sb-nav{flex:1;display:flex;flex-direction:column;gap:var(--v3)}
+.sb-gk{font-size:var(--t-label);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#B4BECC;padding:0 var(--v3) 7px}
+.sb-i{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;
+  font-size:var(--t-sm);font-weight:400;color:var(--text-2);padding:8px var(--v3);cursor:pointer;
+  border-left:2px solid transparent;transition:color .16s ease,border-color .16s ease,background .16s ease}
+.sb-i:hover{color:var(--navy);background:#FAFBFC}
+.sb-i.on{color:var(--navy);font-weight:600;border-left-color:var(--c-balanceado);background:#F7F9FB}
+body[data-fund] .sb-i.on{border-left-color:var(--ctx-fund-color,var(--c-balanceado))}
+.sb-meeting{margin:var(--v3) var(--v3) 0;font-family:inherit;font-size:var(--t-xs);font-weight:500;
+  padding:10px;border:1px solid #D5DCE6;border-radius:var(--rE);background:none;color:var(--navy);cursor:pointer;transition:background .18s ease}
+.sb-meeting:hover{background:#F7F9FB}
+.sb-scrim{display:none}
+.sb-toggle{display:none}
+/* Layout: contenido desplazado */
+.shell{padding-left:236px}
+@media(max-width:1024px){
+  .sb{transform:translateX(-100%);transition:transform .28s cubic-bezier(.22,.9,.3,1);width:264px;box-shadow:0 0 40px rgba(16,33,64,.12)}
+  body.sb-open .sb{transform:none}
+  .shell{padding-left:0}
+  .sb-toggle{display:flex;flex-direction:column;justify-content:center;gap:4px;position:fixed;top:12px;left:12px;z-index:70;
+    width:40px;height:40px;padding:0 10px;background:#fff;border:1px solid #E4E9F0;border-radius:var(--rE);cursor:pointer}
+  .sb-toggle span{display:block;height:1.5px;background:var(--navy);border-radius:2px}
+  body.sb-open .sb-scrim{display:block;position:fixed;inset:0;background:rgba(16,33,64,.28);z-index:55}
+  .ctx-bar,.discovery{padding-left:64px}
+}
 /* ══════ INSTITUTIONAL CONTEXT BAR ══════ */
 .ctx-summary{position:relative;background:#fff;border-bottom:1px solid #E4E9F0;padding:0;display:block}
 .ctx-summary{
@@ -807,7 +1178,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 .tm-preset:hover{border-color:var(--navy);color:var(--navy)}
 .tm-preset.active{background:var(--navy);border-color:var(--navy);color:#fff}
 /* ── TARJETAS DE ESCENARIO PREMIUM ── */
-.sc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--s4)}
+
 .sc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r4);padding:var(--s5);box-shadow:var(--sh1);border-top:3px solid var(--gray-300);transition:transform .16s,box-shadow .16s}
 .sc-card:hover{transform:translateY(-2px);box-shadow:var(--sh2)}
 .sc-base{border-top-color:var(--pos)}
@@ -983,7 +1354,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 .arch-badge strong{color:#34D399}
 .series-fm{background:#DBEAFE;color:#1E40AF}.series-seg{background:#E8EFF7;color:#112240}.series-apv{background:#DCFCE7;color:#15803D}
 /* ═══ PRODUCT DISCOVERY LAYER (secondary selector) ═══ */
-.discovery{background:var(--surface);border-bottom:1px solid var(--border);padding:var(--s4) var(--s8)}
+.discovery{background:var(--surface);border-bottom:1px solid var(--border);padding:10px var(--s8)}
 .discovery-head{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
 .discovery-title{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-right:var(--s2)}
 .vehicle-switch{display:flex;gap:2px;background:var(--gray-100);padding:3px;border-radius:var(--rF)}
@@ -1107,7 +1478,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 @media(max-width:768px){.psstrip{grid-template-columns:1fr 1fr}.bento{grid-template-columns:1fr}.bento-conv,.bento-decision,.bento-risk,.bento-faq,.bento-market{grid-column:span 1}}
 /* ═══ DECISIONS — card grid ═══ */
 .dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5)}
-.dcard{border:1px solid var(--border);border-radius:var(--r5);background:var(--surface);box-shadow:var(--sh1);padding:var(--s6);cursor:pointer;transition:all .2s cubic-bezier(.2,.7,.3,1);display:flex;flex-direction:column;border-top:3px solid var(--action)}
+.dcard{border:1px solid var(--border);border-radius:var(--r5);background:var(--surface);box-shadow:var(--sh1);padding:var(--v3);cursor:pointer;transition:all .2s cubic-bezier(.2,.7,.3,1);display:flex;flex-direction:column;border-top:3px solid var(--action)}
 .dcard:hover{box-shadow:var(--sh2);transform:translateY(-3px)}
 .dcard-no{border-top-color:var(--text-3)}
 .dcard-top{display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s4);flex-wrap:wrap}
@@ -1130,8 +1501,8 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
   .ctx-bar{padding-inline:max(var(--s8),calc((100vw - 1280px)/2))}
     .discovery{padding-inline:max(var(--s8),calc((100vw - 1280px)/2))}
   
-  .dock{padding-inline:max(var(--s6),calc((100vw - 1380px)/2))}
-  .dock-items{justify-content:center}
+  
+  
 }
 /* ═══ "MÁS" BOTTOM SHEET (mobile) ═══ */
 .sheet-overlay{display:none;position:fixed;inset:0;z-index:1100;background:rgba(15,23,42,.35);-webkit-opacity:0;transition:opacity .25s;align-items:flex-end}
@@ -1145,7 +1516,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 .sheet-item span{font-size:10.5px;font-weight:700;color:var(--text-2);line-height:1.2}
 .sheet-ic{font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--navy);width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:var(--sh1);transition:transform .15s}
 .sheet-item:active .sheet-ic{transform:scale(.92)}
-.nav-more{display:none}
+
 /* ═══ MOBILE OVERHAUL ═══ */
 @media(max-width:820px){
   html,body{overflow-x:hidden;max-width:100vw}
@@ -1163,13 +1534,13 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
   
   
   /* dock: 5 tabs, no scroll, iOS style */
-  .dock{height:calc(60px + env(safe-area-inset-bottom));padding:0 var(--s2) env(safe-area-inset-bottom);gap:0}
-  .dock-brand,.dock-sep,.btn-meeting{display:none}
-  .nav-sec{display:none}
-  .nav-more{display:flex}
-  .dock-items{overflow:visible;justify-content:space-around;gap:0}
-  .nav-item{padding:0 6px;font-size:10.5px;flex:1}
-  .nav-item.active{border-top-color:transparent;background:none}
+  
+  .dock-brand,.dock-sep,
+  
+  
+  
+  
+  
   .nav-item.active .ni{color:#fff}
   .nav-item.active .nl{color:#fff;font-weight:800}
   .main{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
@@ -1219,10 +1590,10 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 @media(max-width:900px){.mm-stats{grid-template-columns:1fr}.mm-row{grid-template-columns:1fr}.mm-profile{font-size:38px}}
 /* ═══ CONVICTIONS — card grid ═══ */
 .cvgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
-.cvcard{border:1px solid var(--border);border-radius:var(--r5);background:var(--surface);box-shadow:var(--sh1);padding:var(--s5);cursor:pointer;transition:all .2s cubic-bezier(.2,.7,.3,1);display:flex;flex-direction:column}
+.cvcard{border:1px solid var(--border);border-radius:var(--r5);background:var(--surface);box-shadow:var(--sh1);padding:var(--v3);cursor:pointer;transition:all .2s cubic-bezier(.2,.7,.3,1);display:flex;flex-direction:column}
 .cvcard:hover{box-shadow:var(--sh2);transform:translateY(-3px)}
 .cvcard-top{display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s4);flex-wrap:wrap}
-.cvcard-ic{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;margin-right:2px}
+
 .cvcard-title{font-size:14px;font-weight:700;letter-spacing:-.01em;line-height:1.35;margin-bottom:var(--s3)}
 .cvcard-meta{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s3)}
 .cvcard-vh{margin-bottom:var(--s4)}
@@ -1240,7 +1611,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 .pe-overlay.open .pe-modal{transform:scale(1) translateY(0);opacity:1}
 .pe-modal-head{display:flex;align-items:center;justify-content:space-between;padding:var(--s5) var(--s6);border-bottom:1px solid var(--border)}
 .pe-modal-title{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
-.pe-close{width:32px;height:32px;border-radius:50%;border:none;background:var(--gray-100);color:var(--text-2);font-size:16px;cursor:pointer;transition:all .13s;display:flex;align-items:center;justify-content:center}
+.pe-close{font-size:22px;line-height:1;font-weight:300;width:32px;height:32px;border-radius:50%;border:none;background:var(--gray-100);color:var(--text-2);font-size:16px;cursor:pointer;transition:all .13s;display:flex;align-items:center;justify-content:center}
 .pe-close:hover{background:var(--gray-200);color:var(--text-1)}
 .pe-body{padding:var(--s8) var(--s8) var(--s7)}
 .survey-wrap{max-width:100%;margin:0 auto}
@@ -1263,31 +1634,233 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 .result-score-num{font-size:20px;font-weight:800;font-feature-settings:'tnum';color:#fff}
 .result-score-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.55);margin-top:2px}
 @media(max-width:768px){.survey-q{font-size:16px}.result-profile{font-size:38px}.pe-body{padding:var(--s6) var(--s5)}.pe-overlay{padding:var(--s4)}.result-score{gap:var(--s4);padding:var(--s3) var(--s5)}}
-@media(max-width:1024px){.g5{grid-template-columns:repeat(3,1fr)}.g3{grid-template-columns:1fr 1fr}.dock-brand{display:none}}
+@media(max-width:1024px){.g5{grid-template-columns:repeat(3,1fr)}.g3{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.screen{padding:var(--s5) var(--s4)}.g5{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}.d-l{font-size:27px}.cost-amount{font-size:38px}.slider-val-display{font-size:38px}.scenario-pills{flex-wrap:nowrap;overflow-x:auto}.pc-dropdown{min-width:280px}.ctx-client{display:none}.discovery{padding:var(--s3) var(--s4)}.discovery-head{gap:var(--s2)}.cards-band{margin-left:0;width:100%}}
+
+/* ═══════════════════════════════════════════════════
+   CAPA FINAL · sistema de tarjetas (ref. Wander)
+   Se declara al final para ganar por orden de cascada
+   ═══════════════════════════════════════════════════ */
+:root{--card-r:20px;--card-r-sm:14px;--canvas:#F2F3F5;
+  --card-sh:0 1px 2px rgba(16,33,64,.04),0 8px 24px rgba(16,33,64,.055);
+  --card-bd:1px solid rgba(0,0,0,.07)}
+body,.main{background:var(--canvas)}
+
+/* ── BANNER ── */
+#ctx-summary{background:transparent !important;border:none !important;box-shadow:none !important;
+  backdrop-filter:none !important;-webkit-backdrop-filter:none !important;position:relative;padding:18px 0 0 !important}
+.icb-accent{display:none}
+.icb-body{margin:0 var(--s8);padding:22px 28px !important;background:#0F1B3C;border-radius:var(--card-r);
+  box-shadow:0 6px 22px rgba(15,27,60,.26);position:relative;overflow:hidden}
+.icb-body::after{content:'';position:absolute;right:-40px;top:-70px;width:220px;height:220px;border-radius:50%;
+  background:var(--ctx-fund-color,#2F5FA8);opacity:.20}
+.icb-fund{font-size:21px !important;font-weight:600 !important;letter-spacing:-.02em !important;
+  color:#fff !important;text-transform:none !important;line-height:1.2;position:relative;z-index:1}
+.icb-meta{margin-top:7px;position:relative;z-index:1}
+.icb-meta span{font-size:12.5px !important;font-weight:400 !important;color:rgba(255,255,255,.66) !important}
+.icb-meta span+span::before{background:rgba(255,255,255,.24) !important;margin:0 12px !important}
+@media(min-width:1281px){.icb-body{margin-inline:max(var(--s8),calc((100vw - 1280px)/2))}}
+
+/* ── HOME · fondo seleccionado ── */
+.hm-lead{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  padding:var(--v5) !important;position:relative;overflow:hidden}
+.hm-lead::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pc)}
+.hm-lead-name{font-size:46px !important;font-weight:700 !important;letter-spacing:-.032em !important}
+.hm-lead-facts{display:grid !important;grid-template-columns:repeat(2,1fr);gap:12px;border-top:none !important;padding-top:var(--v3) !important}
+.hm-lead-facts div{background:#F5F6F8;border-radius:var(--card-r-sm);padding:14px 16px}
+.hm-lead-facts dd{font-size:17px !important;font-weight:700 !important;color:#1D1D1F !important}
+
+/* ── HOME · índice de fondos como tarjetas ── */
+.hm-index ul{display:flex !important;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0}
+.hm-index li{margin:0}
+.hm-fund{display:flex !important;align-items:stretch;width:100%;text-align:left;font-family:inherit;cursor:pointer;
+  background:#fff !important;border:var(--card-bd) !important;border-radius:var(--card-r-sm) !important;
+  padding:0 !important;overflow:hidden;box-shadow:0 1px 2px rgba(16,33,64,.05);
+  transition:transform .2s ease,box-shadow .2s ease}
+.hm-fund:hover{transform:translateX(3px);box-shadow:var(--card-sh)}
+.fi-conservador{--pc:#8A94A6}.fi-moderado{--pc:#5B9BC4}.fi-balanceado{--pc:#2F5FA8}
+.fi-crecimiento{--pc:#3F8F68}.fi-agresivo{--pc:#C0524A}
+.hf-rule{flex:0 0 4px !important;background:var(--pc) !important;height:auto !important;width:auto !important}
+.hf-body{flex:1;padding:15px 18px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.hf-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hf-n{font-size:17px !important;font-weight:700 !important;color:#1D1D1F !important;letter-spacing:-.015em}
+.hf-d{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.hf-d span{font-size:11.5px !important;color:#86868B !important}
+.hf-d b{font-size:12.5px !important;font-weight:700 !important;color:#1D1D1F !important;font-feature-settings:'tnum'}
+.hf-tag{font-size:10px !important;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--pc) !important;background:color-mix(in srgb,var(--pc) 13%,#fff);padding:3px 9px;border-radius:99px;white-space:nowrap}
+.hm-fund.on{background:#0F1B3C !important;border-color:#0F1B3C !important;box-shadow:0 5px 18px rgba(15,27,60,.26)}
+.hm-fund.on .hf-n{color:#fff !important}
+.hm-fund.on .hf-d span{color:rgba(255,255,255,.52) !important}
+.hm-fund.on .hf-d b{color:#fff !important}
+.hm-fund.on .hf-tag{background:rgba(255,255,255,.18);color:#fff !important}
+
+/* ── HOME · Comité y accesos ── */
+.cmt{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  padding:var(--v5) !important;margin-top:var(--v4) !important;border-bottom:none !important}
+.cmt section{background:#F5F6F8;border-radius:var(--card-r-sm);padding:16px 18px}
+.hm-next-list button{background:#fff;border:var(--card-bd);border-radius:var(--card-r-sm);
+  padding:18px 20px !important;box-shadow:0 1px 2px rgba(16,33,64,.05);transition:transform .2s ease,box-shadow .2s ease}
+.hm-next-list button:hover{transform:translateY(-2px);box-shadow:var(--card-sh)}
+
+/* ── CONVICCIONES / DECISIONES · tarjetas ── */
+.cvcard,.dcard{background:#fff;border:var(--card-bd);border-radius:18px;padding:var(--v4) !important;
+  box-shadow:var(--card-sh);transition:transform .22s ease,box-shadow .22s ease}
+.cvcard:hover,.dcard:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(16,33,64,.05),0 16px 40px rgba(16,33,64,.10)}
+
+/* ── FICHA DEL FONDO ── */
+.fund-hero{background:#0F1B3C !important;border-radius:var(--card-r);padding:var(--v5) var(--v6) !important;
+  box-shadow:0 8px 28px rgba(15,27,60,.26);position:relative;overflow:hidden}
+.fund-hero::after{content:'';position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;
+  background:var(--ctx-fund-color,#2F5FA8);opacity:.22}
+.fund-hero>*{position:relative;z-index:1}
+.fund-status{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  border-left:5px solid #3F8F68;padding:var(--v4) !important}
+.pol-grid{display:grid !important;grid-template-columns:repeat(2,1fr);gap:14px}
+.pol-item{background:#F5F6F8 !important;border:1px solid rgba(0,0,0,.05) !important;border-radius:var(--card-r-sm) !important;
+  padding:18px 20px !important}
+.pol-k{font-size:11.5px !important;font-weight:700 !important;letter-spacing:.1em;color:#86868B !important;margin-bottom:8px}
+.pol-v{font-size:13.5px !important;line-height:1.6;color:#3A3A3C !important}
+.ex-block{background:#fff;border:var(--card-bd);border-radius:var(--card-r);padding:var(--v4) !important;box-shadow:var(--card-sh)}
+.doc-card{background:#fff;border:var(--card-bd);border-radius:var(--card-r-sm);box-shadow:0 1px 2px rgba(16,33,64,.05)}
+.doc-card:hover{box-shadow:var(--card-sh);transform:translateY(-2px)}
+
+/* ── MODO REUNIÓN · hero con presencia ── */
+.mm-hero{background:#0F1B3C !important;border-radius:24px !important;padding:var(--v6) !important;
+  box-shadow:0 12px 40px rgba(15,27,60,.30);position:relative;overflow:hidden}
+.mm-hero::after{content:'';position:absolute;right:-80px;top:-90px;width:340px;height:340px;border-radius:50%;
+  background:var(--ctx-fund-color,#2F5FA8);opacity:.24}
+.mm-hero>*{position:relative;z-index:1}
+.mm-profile{font-size:44px !important;font-weight:700 !important;letter-spacing:-.032em}
+.mm-stat{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);padding:var(--v4) !important}
+.mm-card,.mm-block{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh)}
+
+
+/* ══ BANNER · identidad cromática por fondo ══ */
+:root{--fund-deep:#16294D;--fund-accent:#2F5FA8}
+body[data-fund="conservador"]{--fund-deep:#2E3742;--fund-accent:#8A94A6}
+body[data-fund="moderado"]{--fund-deep:#1B3C55;--fund-accent:#5B9BC4}
+body[data-fund="balanceado"]{--fund-deep:#152F55;--fund-accent:#2F5FA8}
+body[data-fund="crecimiento"]{--fund-deep:#183A2C;--fund-accent:#3F8F68}
+body[data-fund="agresivo"]{--fund-deep:#4A211D;--fund-accent:#C0524A}
+.icb-body{background:var(--fund-deep) !important;box-shadow:0 6px 22px color-mix(in srgb,var(--fund-deep) 42%,transparent) !important}
+.icb-body::after{background:var(--fund-accent) !important;opacity:.28 !important}
+.fund-hero{background:var(--fund-deep) !important;box-shadow:0 8px 28px color-mix(in srgb,var(--fund-deep) 40%,transparent) !important}
+.fund-hero::after{background:var(--fund-accent) !important;opacity:.30 !important}
+.mm-hero{background:var(--fund-deep) !important;box-shadow:0 12px 40px color-mix(in srgb,var(--fund-deep) 45%,transparent) !important}
+.mm-hero::after{background:var(--fund-accent) !important;opacity:.32 !important}
+.hm-fund.on{background:var(--fund-deep) !important;border-color:var(--fund-deep) !important;
+  box-shadow:0 5px 18px color-mix(in srgb,var(--fund-deep) 40%,transparent) !important}
+
+
+/* ══════ PERFILAMIENTO · resultado con el lenguaje del Home ══════ */
+.pe-modal{border-radius:24px !important;overflow:hidden}
+.result-hero{background:var(--fund-deep,#16294D);border-radius:var(--card-r);padding:var(--v6) var(--v5) !important;
+  margin-bottom:var(--v4);position:relative;overflow:hidden;box-shadow:0 8px 28px rgba(15,27,60,.24);text-align:left}
+.result-hero::after{content:'';position:absolute;right:-70px;top:-80px;width:280px;height:280px;border-radius:50%;
+  background:var(--fund-accent,#2F5FA8);opacity:.26}
+.result-hero>*{position:relative;z-index:1}
+.result-eyebrow{font-size:11px !important;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.58) !important;margin-bottom:10px}
+.result-profile{font-size:52px !important;font-weight:700 !important;letter-spacing:-.034em;line-height:1;
+  color:#fff !important;margin-bottom:var(--v4)}
+.result-score{display:grid !important;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:var(--v3)}
+.result-score-item{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--card-r-sm);padding:14px 16px}
+.result-score-num{font-size:24px !important;font-weight:700 !important;color:#fff !important;line-height:1.1;
+  font-feature-settings:'tnum'}
+.result-score-label{font-size:11px !important;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.55) !important;margin-top:5px}
+/* Tarjetas del resultado con el sistema Wander */
+.survey-wrap .card{background:#fff;border:var(--card-bd);border-radius:var(--card-r);
+  box-shadow:var(--card-sh);padding:var(--v4) !important}
+.survey-wrap .g3,.survey-wrap .g2{gap:12px !important}
+.survey-wrap .ib-label,.survey-wrap .conv-block-label{font-size:11px !important;font-weight:700 !important;
+  letter-spacing:.11em;text-transform:uppercase;color:#86868B !important;margin-bottom:8px}
+.survey-wrap .h-m{font-size:19px !important;font-weight:700 !important;color:#1D1D1F !important}
+/* Filas de convicciones y decisiones: sin icono, con marca de color */
+.pe-row{display:flex;align-items:flex-start;gap:12px;background:#F5F6F8;border-radius:var(--card-r-sm);
+  padding:13px 16px;margin-bottom:9px;cursor:pointer;transition:background .2s ease,transform .2s ease;
+  font-size:13.5px;line-height:1.45;color:#3A3A3C;position:relative}
+.pe-row::before{content:'';flex:0 0 3px;align-self:stretch;background:var(--fund-accent,#2F5FA8);border-radius:2px}
+.pe-row:hover{background:#EDEFF3;transform:translateX(3px)}
+.pe-row:last-child{margin-bottom:0}
+/* Barra de composición */
+.survey-wrap .comp-bar{height:36px;border-radius:var(--card-r-sm);overflow:hidden}
+.survey-wrap .comp-seg{display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;color:#fff}
+
+
+/* ══ Resultado de la encuesta · color del perfil DETECTADO ══ */
+.rh-conservador,.rw-conservador{--res-deep:#2E3742;--res-accent:#8A94A6}
+.rh-moderado,.rw-moderado{--res-deep:#1B3C55;--res-accent:#5B9BC4}
+.rh-balanceado,.rw-balanceado{--res-deep:#152F55;--res-accent:#2F5FA8}
+.rh-crecimiento,.rw-crecimiento{--res-deep:#183A2C;--res-accent:#3F8F68}
+.rh-agresivo,.rw-agresivo{--res-deep:#4A211D;--res-accent:#C0524A}
+.result-hero{background:var(--res-deep,#16294D) !important;
+  box-shadow:0 8px 28px color-mix(in srgb,var(--res-deep,#16294D) 42%,transparent) !important}
+.result-hero::after{background:var(--res-accent,#2F5FA8) !important}
+.survey-wrap .pe-row::before{background:var(--res-accent,#2F5FA8) !important}
+.survey-wrap .comp-seg:first-child{background:var(--res-accent,#2F5FA8) !important}
+
+
+/* ══ Costo de decidir · encabezado con contexto ══ */
+.dcl-lead{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  padding:var(--v5);margin-bottom:var(--v3);border-left:5px solid var(--fund-accent,#2F5FA8)}
+.dcl-lead-k{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#86868B;margin-bottom:10px}
+.dcl-lead-t{font-size:26px;font-weight:700;letter-spacing:-.026em;line-height:1.25;color:#1D1D1F;margin:0 0 10px}
+.dcl-lead-d{font-size:14px;line-height:1.6;color:#6E6E73;margin:0;max-width:70ch}
+/* Tabla comparativa con el sistema de tarjetas */
+.dcl-compare{background:#fff;border:var(--card-bd);border-radius:var(--card-r);box-shadow:var(--card-sh);
+  padding:var(--v4) var(--v5) var(--v3);overflow:hidden}
+.dclt th{color:#86868B !important;border-bottom:1px solid rgba(0,0,0,.10) !important;padding-bottom:12px !important}
+.dclt td{border-bottom:1px solid rgba(0,0,0,.05) !important;padding:15px var(--v2) !important}
+.dclt tr:last-child td{border-bottom:none !important}
+.dclt tr:hover{background:#F5F6F8 !important}
+.dclt tr.on{background:#EEF2F7 !important}
+.dclt tr.base td{background:color-mix(in srgb,#3F8F68 6%,#fff)}
+.dclt tr.base .dclt-n{color:#1D1D1F !important;font-weight:700 !important}
+
+
+.dclt td:nth-child(2),.dclt td:nth-child(3){white-space:nowrap}
+.dclt th:nth-child(2),.dclt th:nth-child(3){white-space:nowrap}
+.dclt td:nth-child(4){padding-left:var(--v3) !important}
 </style>
 </head>
 <body>
 <div class="shell">
-<nav class="dock" id="dock">
- <div class="dock-brand"><div class="name">Revista<br>Dinámicos</div></div>
- <div class="dock-items">
- <div class="nav-item active" data-nav="home" onclick="go('home')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></span><span class="nl">Inicio</span></div>
- <div class="nav-item nav-sec" data-nav="profile-engine" onclick="go('profile-engine')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span><span class="nl">Perfilar</span></div>
- <div class="nav-div" aria-hidden="true"></div><div class="nav-item nav-sec" data-nav="market" onclick="go('market')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m6 15 4-5 3 3 5-7"/></svg></span><span class="nl">Mercado</span></div>
- <div class="dock-sep"></div>
- <div class="nav-item" data-nav="convictions" onclick="go('convictions')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.7.6 1 1.3 1 2.1h5c0-.8.3-1.5 1-2.1A6 6 0 0 0 12 3z"/></svg></span><span class="nl">Convicciones</span></div>
- <div class="nav-item" data-nav="decisions" onclick="go('decisions')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg></span><span class="nl">Decisiones</span></div>
- <div class="dock-sep"></div>
- <div class="nav-item nav-sec" data-nav="timing" onclick="go('timing')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></span><span class="nl">Timing</span></div>
- <div class="nav-item nav-sec" data-nav="dcl" onclick="go('dcl')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15h.01M8.5 18.5h.01M12 18.5h.01M15.5 18.5h.01"/></svg></span><span class="nl">Costo</span></div>
- <div class="dock-sep"></div>
- <div class="nav-item nav-sec" data-nav="portfolio" onclick="go('portfolio')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></svg></span><span class="nl">Portfolio</span></div>
- <div class="nav-item nav-sec" data-nav="performance" onclick="go('performance')"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="M7 15v-3M11 15V8M15 15v-5M19 15V6"/></svg></span><span class="nl">Rentabilidad</span></div>
- <div class="nav-item nav-more" onclick="openMoreSheet()"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg></span><span class="nl">Más</span></div>
- </div>
- <button class="btn-meeting" onclick="go('summary')"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16l-3.5-2.5L12 20l-3.5-2.5L5 20z"/><path d="M9 9h6M9 13h4"/></svg> Resumen</button>
+<button class="sb-toggle" id="sb-toggle" onclick="toggleSidebar()" aria-label="Menú">
+  <span></span><span></span><span></span>
+</button>
+<nav class="sb" id="sidebar" aria-label="Navegación principal">
+  <div class="sb-brand">
+    <div class="sb-brand-t">Fondos Dinámicos</div>
+    <div class="sb-brand-s">Revista Interactiva</div>
+  </div>
+  <div class="sb-active" id="sb-active"></div>
+  <div class="sb-nav">
+    <div class="sb-group">
+      <div class="sb-gk">Contexto</div>
+      <button class="sb-i" data-nav="home" onclick="goNav('home')">Inicio</button>
+      <button class="sb-i" data-nav="profile-engine" onclick="goNav('profile-engine')">Perfilar cliente</button>
+      <button class="sb-i" data-nav="market" onclick="goNav('market')">Mercado</button>
+    </div>
+    <div class="sb-group">
+      <div class="sb-gk">Estrategia</div>
+      <button class="sb-i" data-nav="convictions" onclick="goNav('convictions')">Convicciones</button>
+      <button class="sb-i" data-nav="decisions" onclick="goNav('decisions')">Decisiones</button>
+      <button class="sb-i" data-nav="portfolio" onclick="goNav('portfolio')">Ficha del fondo</button>
+    </div>
+    <div class="sb-group">
+      <div class="sb-gk">Evidencia</div>
+      <button class="sb-i" data-nav="performance" onclick="goNav('performance')">Rentabilidad</button>
+      <button class="sb-i" data-nav="timing" onclick="goNav('timing')">Timing de mercado</button>
+      <button class="sb-i" data-nav="dcl" onclick="goNav('dcl')">Costo de decidir</button>
+    </div>
+
+  </div>
+  <button class="sb-meeting" onclick="toggleMeetingMode()">Modo Reunión</button>
 </nav>
+<div class="sb-scrim" id="sb-scrim" onclick="closeSidebar()"></div>
 <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
 <div class="main">
  <div class="ctx-bar">
@@ -1354,7 +1927,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
  <div class="pe-modal" onclick="event.stopPropagation()">
  <div class="pe-modal-head">
  <span class="pe-modal-title">Investment Profile Engine</span>
- <button class="pe-close" onclick="closeProfileEngine()" aria-label="Cerrar"></button>
+ <button class="pe-close" onclick="closeProfileEngine()" aria-label="Cerrar">&times;</button>
  </div>
  <div class="pe-body" id="profile-engine-body"></div>
  </div>
@@ -1366,7 +1939,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
  <div class="pe-modal pe-modal-wide" onclick="event.stopPropagation()">
  <div class="pe-modal-head">
  <span class="pe-modal-title" id="detail-modal-title">Detalle</span>
- <button class="pe-close" onclick="closeDetail()" aria-label="Cerrar"></button>
+ <button class="pe-close" onclick="closeDetail()" aria-label="Cerrar">&times;</button>
  </div>
  <div class="pe-body" id="detail-modal-body"></div>
  </div>
@@ -1387,8 +1960,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
  <div class="sheet-item" onclick="goFromSheet('dcl')"><div class="sheet-ic" style="background:var(--c-agresivo-bg)">C</div><span>Costo de Decidir</span></div>
  <div class="sheet-item" onclick="goFromSheet('portfolio')"><div class="sheet-ic" style="background:var(--c-crecimiento-bg)">F</div><span>Portfolio Explorer</span></div>
  <div class="sheet-item" onclick="goFromSheet('performance')"><div class="sheet-ic" style="background:var(--navy-050)">R</div><span>Análisis de Rentabilidad</span></div>
- <div class="sheet-item" onclick="goFromSheet('summary')"><div class="sheet-ic" style="background:var(--navy);color:#fff"></div><span>Resumen</span></div>
- </div>
+ 
  </div>
 </div>
 <script>
@@ -1526,6 +2098,7 @@ const COMMITTEE_BRIEF = {
   acciones:['Reducir renta variable Asia','Aumentar renta variable Latinoamérica','Mantener el resto de la estrategia'],
   interpretacion:'No cambia el perfil. No cambia el horizonte. No cambia la estrategia. Cambia la distribución geográfica dentro de la renta variable.',
   proximo:'Para agosto se anunció una reducción de la exposición a tecnología.',
+  conclusion:'Su estrategia no cambió. El equipo ajustó de dónde proviene el retorno, no cuánto riesgo asume.',
   convictionId:'diversificacion'
 };
 const CONVICTIONS = {
@@ -1876,6 +2449,43 @@ function vchipClass(v){return VEHICLE_CONFIG[v].vchip;}
    SVG CHART ENGINE
 ═══════════════════════════════════════════════════════════ */
 function $svg(tag,a={}){const el=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(a).forEach(([k,v])=>el.setAttribute(k,v));return el;}
+function attachSeriesHover(svgId,tipId,series,labels,accent){
+  const svg=document.getElementById(svgId),tip=document.getElementById(tipId);if(!svg||!tip)return;
+  const W=900,H=280,pad={t:15,r:20,b:44,l:92};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const all=series.flatMap(s=>s.values);
+  let lo=Math.min(...all),hi=Math.max(...all);const sp=hi-lo||1;lo-=sp*0.03;hi+=sp*0.03;
+  const n=series[0].values.length;
+  const X=i=>pad.l+i/(n-1)*cW, Y=v=>pad.t+cH-(v-lo)/(hi-lo)*cH;
+  const NS='http://www.w3.org/2000/svg';
+  let g=svg.querySelector('.hv-layer');
+  if(g)g.remove();
+  g=document.createElementNS(NS,'g');g.setAttribute('class','hv-layer');svg.appendChild(g);
+  const line=document.createElementNS(NS,'line');
+  line.setAttribute('stroke','#C6D0DC');line.setAttribute('stroke-width','1');line.setAttribute('stroke-dasharray','3,3');
+  line.setAttribute('y1',pad.t);line.setAttribute('y2',pad.t+cH);line.style.display='none';g.appendChild(line);
+  const dots=series.map(s=>{const d=document.createElementNS(NS,'circle');
+    d.setAttribute('r','4.5');d.setAttribute('fill','#fff');d.setAttribute('stroke',s.color||accent||'#2F5FA8');
+    d.setAttribute('stroke-width','2.5');d.style.display='none';g.appendChild(d);return d;});
+  const rect=document.createElementNS(NS,'rect');
+  rect.setAttribute('x',pad.l);rect.setAttribute('y',pad.t);rect.setAttribute('width',cW);rect.setAttribute('height',cH);
+  rect.setAttribute('fill','transparent');rect.style.cursor='crosshair';g.appendChild(rect);
+  const show=(e)=>{
+    const b=svg.getBoundingClientRect();
+    const px=(e.clientX-b.left)/b.width*W;
+    let i=Math.round((px-pad.l)/cW*(n-1));i=Math.max(0,Math.min(n-1,i));
+    line.setAttribute('x1',X(i));line.setAttribute('x2',X(i));line.style.display='';
+    series.forEach((s,k)=>{dots[k].setAttribute('cx',X(i));dots[k].setAttribute('cy',Y(s.values[i]));dots[k].style.display='';});
+    tip.innerHTML=`<div class="ct-date">${labels[i]||''}</div>`+
+      series.map(s=>`<div class="ct-row"><span class="ct-dot" style="background:${s.color||accent||'#2F5FA8'}"></span><span class="ct-name">${s.name}</span><span class="ct-val">${s.fmt?s.fmt(s.values[i]):fmt(s.values[i])}</span></div>`).join('');
+    tip.style.display='block';
+    const left=X(i)/W*b.width;
+    tip.style.left=Math.min(Math.max(left,90),b.width-90)+'px';
+    tip.style.top='6px';
+  };
+  rect.addEventListener('mousemove',show);
+  rect.addEventListener('mouseleave',()=>{tip.style.display='none';line.style.display='none';dots.forEach(d=>d.style.display='none');});
+}
 function attachChartHover(svgId,tipId,traj,ret,bi,wi){
   const svg=document.getElementById(svgId),tip=document.getElementById(tipId);if(!svg||!tip)return;
   const W=900,H=280,pad={t:15,r:20,b:44,l:92};
@@ -1976,41 +2586,50 @@ function buildHome(){
 
 function renderHomeBrief(){
   const el=document.getElementById('home-brief');if(!el)return;
-  el.className='hm-brief';
+  el.className='cmt';
   el.innerHTML=`
-    <div class="hm-brief-k">Carta del Comité de Inversiones · ${FUND_STATUS.closeMonth}</div>
-    <div class="hm-brief-grid">
-      <p class="hm-brief-lead">${COMMITTEE_BRIEF.decision}</p>
-      <div class="hm-brief-cols">
-        <section><h3>Qué ocurrió</h3><p>${COMMITTEE_BRIEF.ocurrio}</p></section>
-        <section><h3>Qué decidimos</h3><ul>${COMMITTEE_BRIEF.acciones.map(a=>`<li>${a}</li>`).join('')}</ul></section>
-        <section><h3>Qué significa</h3><p>${COMMITTEE_BRIEF.interpretacion}</p></section>
-      </div>
-    </div>`;
+    <div class="cmt-k">Comité de Inversiones · cierre ${FUND_STATUS.closeMonth}</div>
+    <div class="cmt-grid">
+      <section class="cmt-s"><h3>Qué ocurrió</h3><p>${COMMITTEE_BRIEF.ocurrio}</p>
+        <div class="cmt-mkt">${COMMITTEE_BRIEF.mercados.map(m=>`<span><b>${m[0]}</b>${m[1]}</span>`).join('')}</div></section>
+      <section class="cmt-s"><h3>Qué decidimos</h3><p class="cmt-dec">${COMMITTEE_BRIEF.decision}</p>
+        <ul>${COMMITTEE_BRIEF.acciones.map(a=>`<li>${a}</li>`).join('')}</ul></section>
+      <section class="cmt-s"><h3>Qué significa</h3><p>${COMMITTEE_BRIEF.interpretacion}</p>
+        <p class="cmt-next"><span>Visión</span>${COMMITTEE_BRIEF.proximo}</p></section>
+    </div>
+    <div class="cmt-end"><span class="cmt-endk">Conclusión</span><p>${COMMITTEE_BRIEF.conclusion}</p></div>`;
 }
+
 function renderHomeProfiles(){
   const el=document.getElementById('home-profiles');if(!el)return;
   el.className='hm-select';
   const all=Object.values(PROFILES), act=all.find(p=>p.key===PC.profile)||all[2];
+  const lim=FUND_LIMITS[act.key];
   el.innerHTML=`
     <div class="hm-lead hl-${act.key}">
-      <div class="hm-lead-k">Fondo en revisión</div>
+      <div class="hm-lead-k">Fondo seleccionado</div>
       <h1 class="hm-lead-name">${act.name}</h1>
       <p class="hm-lead-obj">${act.obj}</p>
       <dl class="hm-lead-facts">
-        <div><dt>Riesgo</dt><dd>${act.riskNum} de 7</dd></div>
-        <div><dt>Horizonte</dt><dd>${act.horizon}</dd></div>
+        <div><dt>Perfil de riesgo</dt><dd>${act.riskLabel} · ${act.riskNum} de 7</dd></div>
+        <div><dt>Límite de inversión</dt><dd>${lim.accMin}–${lim.accMax}% acciones</dd></div>
+        <div><dt>Plazo recomendado</dt><dd>${act.horizon}</dd></div>
         <div><dt>Estrategia</dt><dd>${act.rv}% RV · ${act.rf}% RF</dd></div>
       </dl>
     </div>
-    <div class="hm-index">
-      <div class="hm-index-k">Cambiar de fondo</div>
-      <ul>${all.filter(p=>p.key!==act.key).map(p=>`
-        <li><button class="hm-opt ho-${p.key}" onclick="selectCard('${p.key}')">
-          <span class="hm-opt-n">${p.name}</span><span class="hm-opt-m">${p.rv}/${p.rf}</span>
-        </button></li>`).join('')}
+    <aside class="hm-index" aria-label="Otros fondos">
+      <div class="hm-index-k">Fondos Dinámicos</div>
+      <ul>${all.map(p=>{const L=FUND_LIMITS[p.key],on=p.key===act.key;
+        return `<li><button class="hm-fund fi-${p.key}${on?' on':''}" onclick="selectCard('${p.key}')" aria-pressed="${on}">
+          <span class="hf-rule"></span>
+          <span class="hf-body">
+            <span class="hf-top"><span class="hf-n">${p.name}</span>${on?'<span class="hf-on">Seleccionado</span>':''}</span>
+            <span class="hf-d"><span>Límite de inversión</span><b>${L.accMin}–${L.accMax}% acciones</b></span>
+            <span class="hf-d"><span>Plazo recomendado</span><b>${p.horizon}</b></span>
+          </span>
+        </button></li>`;}).join('')}
       </ul>
-    </div>`;
+    </aside>`;
 }
 
 function renderHomeActiveContext(){ /* contexto activo ahora vive en la barra ejecutiva navy persistente */ }
@@ -2035,7 +2654,9 @@ function buildMarket(){
  </div>
  <div class="t-2 mb-6" style="max-width:680px">Cada evento de mercado está conectado a la convicción que informa. El contexto no se lee solo: se interpreta a través de las convicciones del equipo.</div>
  <div id="market-events"></div>
- </div>`;
+ 
+    <nav class="nxt"><a onclick="go('convictions')"><span class="nxt-k">Continuar</span><span class="nxt-t">Convicciones</span><span class="nxt-d">Qué sostiene la estrategia del fondo</span></a></nav>
+  </div>`;
 }
 function renderMarketEvents(){
   const el=document.getElementById('market-events');if(!el)return;
@@ -2047,7 +2668,6 @@ function renderMarketEvents(){
     const icCol=e.sign==='pos'?'var(--pos)':e.sign==='neg'?'var(--neg)':'var(--text-3)';
     return `<div class="cvcard" onclick="openMarketEvent(${i})">
  <div class="cvcard-top">
- <div class="cvcard-ic" style="background:${bg};color:${icCol};font-size:16px;font-weight:800">${ic}</div>
  <span class="badge ${e.sign==='pos'?'badge-pos':e.sign==='neg'?'badge-neg':'badge-neutral'}">${e.impact==='h'?'Impacto alto':e.impact==='m'?'Impacto medio':'Impacto bajo'}</span>
  </div>
  <div class="label t-3 mb-2" style="font-size:10.5px">${e.scope}</div>
@@ -2081,7 +2701,9 @@ function buildConvictions(){
  <div class="t-2 mb-4" style="max-width:720px">La convicción es el nodo central del sistema: todo —decisiones, posiciones, instrumentos— se deriva de aquí. Cada convicción se adapta en narrativa y recomendación según el vehículo activo.</div>
  <div class="narrative mb-6" id="conv-list-context"></div>
  <div id="conv-list"></div>
- </div>`;
+ 
+    <nav class="nxt"><a onclick="go('decisions')"><span class="nxt-k">Continuar</span><span class="nxt-t">Decisiones</span><span class="nxt-d">Qué hizo el Comité este mes</span></a></nav>
+  </div>`;
 }
 function renderConvList(){
   const el=document.getElementById('conv-list');if(!el)return;
@@ -2092,7 +2714,6 @@ function renderConvList(){
     const pv=cv.perVehicle[PC.vehicle];
     return `<div class="cvcard" onclick="openConviction('${cv.id}')">
  <div class="cvcard-top">
- <div class="cvcard-ic" style="background:${CB[cv.type]||'var(--navy-050)'}">${cv.icon}</div>
  <span class="badge ${cv.badge}">${cv.type}</span>
         ${cv.evidence?'<span class="badge badge-pos">Con evidencia</span>':''}
  </div>
@@ -2194,7 +2815,9 @@ function buildDecisions(){
  <div class="thesis">Decisiones</div><div class="thesis-q">¿Qué decidió el equipo este mes?</div>
  <div class="t-2 mb-6" style="max-width:720px">Cada decisión comienza por la convicción que la origina — nunca por el producto ni el instrumento. Incluye una decisión de NO actuar, con el mismo peso visual que las demás.</div>
  <div class="dgrid" id="decisions-list"></div>
- </div>`;
+ 
+    <nav class="nxt"><a onclick="go('portfolio')"><span class="nxt-k">Continuar</span><span class="nxt-t">Ficha del fondo</span><span class="nxt-d">Cómo quedó la composición</span></a></nav>
+  </div>`;
 }
 function renderDecisionsList(){
   const el=document.getElementById('decisions-list');if(!el)return;
@@ -2205,7 +2828,6 @@ function renderDecisionsList(){
     const accTxt=d.accion==='Aumentamos'?'var(--action)':'var(--text-1)';
     return `<div class="dcard ${isNo?'dcard-no':''}" onclick="openDecision('${d.id}')">
  <div class="dcard-top">
- <div class="cvcard-ic" style="width:40px;height:40px;font-size:16px;background:${isNo?'var(--gray-100)':'var(--c-moderado-bg)'}">${d.icon}</div>
  <span class="badge" style="background:${accColor};color:${accTxt}">${d.accion}</span>
  <span class="badge badge-neutral">${d.month}</span>
  </div>
@@ -2298,6 +2920,15 @@ const FUND_PHILOSOPHY = {
   ]
 };
 /* Rangos oficiales de inversión por perfil (Revista Julio 2026 · "Rango de inversión") */
+/* ── COSTOS POR SERIE Y PERFIL · Revista Agosto 2026 (pág. "Conoce los perfiles") ── */
+const FUND_FEES = {
+  conservador:{A:2.20,P:2.05,F:1.80,APV:1.45,APV_AP:1.00},
+  moderado:   {A:2.60,P:2.35,F:2.00,APV:1.65,APV_AP:1.10},
+  balanceado: {A:3.30,P:2.95,F:2.30,APV:1.90,APV_AP:1.10},
+  crecimiento:{A:3.65,P:3.30,F:2.50,APV:2.00,APV_AP:1.20},
+  agresivo:   {A:4.00,P:3.70,F:2.70,APV:2.30,APV_AP:1.20}
+};
+function fundFee(){return FUND_FEES[PC.profile][PC.series];}
 const FUND_LIMITS = {
   conservador:{accMin:0,accMax:10,deuMin:90,deuMax:100,settle:'T+2'},
   moderado:{accMin:10,accMax:30,deuMin:70,deuMax:90,settle:'T+2'},
@@ -2316,7 +2947,9 @@ function buildPortfolio(){
  <div id="port-composition"></div>
  <div id="port-content"></div>
  <div id="port-docs"></div>
- </div>`;
+ 
+    <nav class="nxt"><a onclick="go('performance')"><span class="nxt-k">Continuar</span><span class="nxt-t">Rentabilidad</span><span class="nxt-d">Cómo se comportó históricamente</span></a></nav>
+  </div>`;
 }
 function portRiskDots(n){return '<span class="rdots">'+[1,2,3,4,5].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')+'</span>';}
 function renderPortHero(){
@@ -2353,7 +2986,7 @@ function renderPortExecSummary(){
  <div class="ex-blocks mb-5">
     ${block('Qué busca',[['Objetivo',pf.obj],['Perfil recomendado',pf.name],['Horizonte',pf.horizon],['Nivel de riesgo',`${pf.riskLabel} · ${pf.risk} de 5`],['Volatilidad oficial',`${pf.vol} anual (Serie A)`]])}
     ${block('Cómo invierte',[['Benchmark',`${pf.rv}% RV / ${pf.rf}% RF`],['Distribución estratégica',`${pf.rv}% acciones / ${pf.rf}% deuda`],['Límite acciones',`${lim.accMin}% – ${lim.accMax}%`],['Límite deuda',`${lim.deuMin}% – ${lim.deuMax}%`]])}
-    ${block('Condiciones',[['Vehículo',PC.vc.label],['Serie',PC.sc.label],['Remuneración máxima',`${PC.sc.maxFee}% anual`],['Pago de rescates',lim.settle],['Rebalanceo','Mensual, según Comité de Inversiones']])}
+    ${block('Condiciones',[['Vehículo',PC.vc.label],['Serie',PC.sc.label],['Remuneración máxima',`${fundFee().toFixed(2)}% anual`],['Pago de rescates',lim.settle],['Rebalanceo','Mensual, según Comité de Inversiones']])}
  </div>
  <div class="card mb-5"><div class="ex-block-t mb-3">Política de inversión</div>
  <div class="body mb-5">${politica}</div>
@@ -2405,6 +3038,13 @@ function renderPortComposition(){
  </div>
  <div class="t-3 mt-4" style="font-size:12px">Composición al cierre de ${FUND_STATUS.closeMonth}, según la Revista Dinámicos ${FUND_STATUS.edition}. La caja corresponde al remanente no asignado a las clases de activo reportadas.</div>
  </div>`;
+}
+let _pfTab='mandato';
+function pfTab(t){
+  _pfTab=t;
+  document.querySelectorAll('.pf-tab').forEach(b=>b.classList.toggle('on',b.dataset.pf===t));
+  const map={mandato:'port-exec-summary',composicion:'port-composition',posiciones:'port-content',documentos:'port-docs'};
+  for(const k in map){const el=document.getElementById(map[k]);if(el)el.style.display=(k===t)?'':'none';}
 }
 function renderPortDocs(){
   const el=document.getElementById('port-docs');if(!el)return;
@@ -2460,7 +3100,9 @@ function buildPerformance(){
  <div class="narrative mb-5" id="perf-context"></div>
  <div class="tabs" id="perf-tabs"></div>
  <div id="perf-content"></div>
- </div>`;
+ 
+    <nav class="nxt"><a onclick="go('timing')"><span class="nxt-k">Continuar</span><span class="nxt-t">Timing de mercado</span><span class="nxt-d">Qué cuesta salir del mercado</span></a></nav>
+  </div>`;
 }
 const PERF_TABS=[['acum','Acumulada'],['anual','Anualizada'],['drawdown','Drawdown'],['volatility','Volatilidad'],['recovery','Recuperación'],['compare','Comparaciones']];
 function renderPerfTabs(){
@@ -2489,13 +3131,56 @@ function renderPerfContent(){
     setTimeout(()=>{
       drawChart('perf-chart',[{values:traj,color:'var(--conv)',width:2.5,fill:'#2563EB'}]);
       attachChartHover('perf-chart','perf-tip',traj,ret,bi,wi);
+      attachSeriesHover('perf-chart','perf-tip',[{name:'Patrimonio',values:traj,color:`var(--c-${PC.profile})`}],['Inicio · Ene 2018'].concat(MONTHS_LABELS));
     },30);
   } else if(_perfTab==='anual'){
     const ann=annualReturns(ret);
-    el.innerHTML=`<div class="card"><div class="h-m mb-4">Rentabilidad por año · ${PC.sc.label}</div>
- <div style="display:flex;align-items:flex-end;gap:var(--s3);height:200px;padding:var(--s4) 0">
-        ${ann.map(a=>{const h=Math.max(Math.abs(a.ret)*8,4);const pos=a.ret>=0;return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%"><div style="font-size:12px;font-weight:700;margin-bottom:4px;color:${pos?'var(--pos)':'var(--neg)'}">${fmtPct(a.ret)}</div><div style="width:100%;height:${h}px;background:${pos?'var(--pos)':'var(--neg)'};border-radius:4px 4px 0 0;opacity:.85"></div><div class="t-3" style="font-size:10.5px;margin-top:6px">${a.year===2026?'26*':a.year}</div></div>`;}).join('')}
- </div><div class="t-3 mt-3" style="font-size:12px">*2026 es parcial (Ene–Jul). Datos reales de la ${PC.sc.label}.</div></div>`;
+    el.innerHTML=`<div class="card mb-5"><div class="h-m mb-2">Rentabilidad por año · ${PC.sc.label}</div>
+      <div class="t-2 body mb-5">Retorno de cada ejercicio, calculado con los retornos mensuales reales del Fondo Dinámico ${PC.pf.name}.</div>
+      <div style="position:relative"><svg class="chart-svg" id="anual-chart" viewBox="0 0 900 300"></svg><div id="anual-tip" class="chart-tip" style="display:none"></div></div>
+      <div class="t-3 mt-4" style="font-size:11.5px">*2026 es parcial (Ene–Jul). Fuente: Revista Fondos Dinámicos ${FUND_STATUS.edition}.</div></div>`;
+    setTimeout(()=>{
+      const svg=document.getElementById('anual-chart');if(!svg)return;
+      const NS='http://www.w3.org/2000/svg',W=900,H=300,pad={t:24,r:24,b:46,l:66};
+      const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+      const vals=ann.map(a=>a.ret);
+      const hi=Math.max(...vals,0),lo=Math.min(...vals,0);
+      const span=(hi-lo)||1, top=hi+span*0.12, bot=lo-span*0.12;
+      const Y=v=>pad.t+cH-(v-bot)/(top-bot)*cH;
+      const bw=cW/ann.length*0.56, gap=cW/ann.length;
+      const mk=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+      // ejes horizontales y etiquetas
+      const ticks=4;
+      for(let i=0;i<=ticks;i++){const v=bot+(top-bot)*i/ticks;
+        svg.appendChild(mk('line',{x1:pad.l,x2:pad.l+cW,y1:Y(v),y2:Y(v),stroke:'#EFF3F7','stroke-width':1}));
+        const lb=mk('text',{x:pad.l-10,y:Y(v)+4,'text-anchor':'end',fill:'#94A3B4','font-size':11,'font-family':'Manrope,Inter,sans-serif','font-weight':500});
+        lb.textContent=v.toFixed(0)+'%';svg.appendChild(lb);}
+      // línea del cero
+      svg.appendChild(mk('line',{x1:pad.l,x2:pad.l+cW,y1:Y(0),y2:Y(0),stroke:'#C6D0DC','stroke-width':1.5}));
+      // barras
+      ann.forEach((a,i)=>{
+        const x=pad.l+gap*i+(gap-bw)/2, y=a.ret>=0?Y(a.ret):Y(0), h=Math.max(2,Math.abs(Y(a.ret)-Y(0)));
+        const col=a.ret>=0?'var(--c-'+PC.profile+')':'#C0524A';
+        const r=mk('rect',{x,y,width:bw,height:h,fill:col,opacity:a.ret>=0?.85:.9,rx:1});
+        r.style.cursor='crosshair';
+        r.addEventListener('mouseenter',()=>{
+          r.setAttribute('opacity','1');
+          const tip=document.getElementById('anual-tip');
+          tip.innerHTML=`<div class="ct-date">${a.year}${a.year===2026?' · parcial (Ene–Jul)':''}</div>
+            <div class="ct-row"><span class="ct-dot" style="background:${col}"></span><span class="ct-name">Retorno del año</span><span class="ct-val">${a.ret>=0?'+':''}${a.ret.toFixed(2)}%</span></div>`;
+          tip.style.display='block';
+          const b=svg.getBoundingClientRect();
+          tip.style.left=Math.min(Math.max((x+bw/2)/W*b.width,90),b.width-90)+'px';tip.style.top='4px';});
+        r.addEventListener('mouseleave',()=>{r.setAttribute('opacity',a.ret>=0?'.85':'.9');document.getElementById('anual-tip').style.display='none';});
+        svg.appendChild(r);
+        // etiqueta del año
+        const yl=mk('text',{x:x+bw/2,y:pad.t+cH+20,'text-anchor':'middle',fill:'#94A3B4','font-size':11,'font-family':'Manrope,Inter,sans-serif','font-weight':500});
+        yl.textContent=a.year===2026?"'26*":a.year;svg.appendChild(yl);
+        // valor sobre la barra
+        const vl=mk('text',{x:x+bw/2,y:a.ret>=0?Y(a.ret)-7:Y(a.ret)+15,'text-anchor':'middle',fill:a.ret>=0?'#3F8F68':'#C0524A','font-size':11,'font-family':'Manrope,Inter,sans-serif','font-weight':700});
+        vl.textContent=(a.ret>=0?'+':'')+a.ret.toFixed(1)+'%';svg.appendChild(vl);
+      });
+    },30);
   } else if(_perfTab==='drawdown'){
     const dd=maxDrawdown(ret);
     const recTxt=dd.recoveryMonths==null?'En curso':dd.recoveryMonths+' '+(dd.recoveryMonths===1?'mes':'meses');
@@ -2505,7 +3190,7 @@ function renderPerfContent(){
       : `El peor episodio del Fondo Dinámico ${PC.pf.name} no fue la caída COVID de 2020 (que su composición defensiva capeó bien), sino el ciclo de alzas de tasas de ${dd.peakLabel.split(' ')[1]||''}. Desde su máximo en ${dd.peakLabel}, la cartera cayó ${Math.abs(dd.maxDD).toFixed(2)}% hasta ${dd.troughLabel}, y recuperó su valor previo en ${dd.recLabel} — ${recTxt} después del punto más bajo.`;
     el.innerHTML=`<div class="card mb-5"><div class="h-m mb-2">Máximo drawdown histórico · Fondo Dinámico ${PC.pf.name} · ${PC.sc.label}</div>
  <div class="t-2 body mb-4">El drawdown mide la peor caída desde un máximo hasta el punto más bajo. Se calcula sobre los retornos históricos reales de <strong>este</strong> perfil y serie — cada perfil tiene su propio peor episodio.</div>
- <svg class="chart-svg" id="perf-chart"></svg></div>
+ <div style="position:relative"><svg class="chart-svg" id="perf-chart"></svg><div id="perf-tip" class="chart-tip" style="display:none"></div></div></div>
  <div class="dd-facts mb-5">
  <div class="dd-fact"><div class="dd-fact-k">Máxima caída</div><div class="dd-fact-v t-neg">${dd.maxDD.toFixed(2)}%</div></div>
  <div class="dd-fact"><div class="dd-fact-k">Máximo previo</div><div class="dd-fact-v">${dd.peakLabel}</div></div>
@@ -2576,12 +3261,15 @@ function renderPerfContent(){
       el.innerHTML=`<div class="card mb-5"><div class="h-m mb-2">Comparación entre fondos · ${PC.sc.label} · mismo $10M</div>
  <div class="t-2 body mb-3">Los cinco Fondos Dinámicos sobre la serie activa, con sus retornos mensuales reales. La diferencia es la asignación a renta variable — y el costo de esa diferencia es volatilidad.</div>
         ${modeBtns}<div class="flex gap-2 mb-4 flex-wrap">${checks}</div>
- <svg class="chart-svg" id="perf-chart"></svg></div>
+ <div style="position:relative"><svg class="chart-svg" id="perf-chart"></svg><div id="perf-tip" class="chart-tip" style="display:none"></div></div></div>
  <div id="compare-table"></div>`;
       setTimeout(()=>{
         const sel=Object.values(PROFILES).filter(p=>_cmpProfiles.has(p.key));
         if(!sel.length){document.getElementById('compare-table').innerHTML='<div class="card t-2">Selecciona al menos un fondo.</div>';return;}
         drawChart('perf-chart',sel.map(p=>({values:trajectory(PROFILE_RETURNS[p.key][PC.series]),color:`var(--c-${p.key})`,width:p.key===PC.profile?3:1.8,opacity:p.key===PC.profile?1:0.75})));
+        attachSeriesHover('perf-chart','perf-tip',
+          sel.map(p=>({name:p.name,values:trajectory(PROFILE_RETURNS[p.key][PC.series]),color:`var(--c-${p.key})`})),
+          ['Inicio · Ene 2018'].concat(MONTHS_LABELS));
         const rows=sel.map(p=>{
           const ret=PROFILE_RETURNS[p.key][PC.series],traj=trajectory(ret),fv=traj[101];
           const mean=ret.reduce((a,b)=>a+b,0)/ret.length;
@@ -2596,13 +3284,16 @@ function renderPerfContent(){
     }
     el.innerHTML=`<div class="card mb-5"><div class="h-m mb-2">Comparación entre series · Fondo Dinámico ${PC.pf.name} · mismo $10M</div>
  <div class="t-2 body mb-4">La diferencia entre series es la comisión acumulada. A mayor plazo, mayor el impacto. Esto informa la conversación de vehículo — no es el foco del producto, es un dato de apoyo.</div>
-      ${modeBtns}<svg class="chart-svg" id="perf-chart"></svg></div>
+      ${modeBtns}<div style="position:relative"><svg class="chart-svg" id="perf-chart"></svg><div id="perf-tip" class="chart-tip" style="display:none"></div></div></div>
  <div id="compare-table"></div>`;
     setTimeout(()=>{
       const series=['A','P','F','APV','APV_AP'];
       const colors={A:'#94A3B8',P:'#64748B',F:'#2563EB',APV:'#10B981',APV_AP:'#059669'};
       const datasets=series.map(s=>({values:trajectory(PROFILE_RETURNS[PC.profile][s]),color:colors[s],width:s===PC.series?3:1.8,opacity:s===PC.series?1:0.65}));
       drawChart('perf-chart',datasets);
+      attachSeriesHover('perf-chart','perf-tip',
+        series.map(s=>({name:SERIES_CONFIG[s].label,values:trajectory(PROFILE_RETURNS[PC.profile][s]),color:colors[s]})),
+        ['Inicio · Ene 2018'].concat(MONTHS_LABELS));
       const finals=series.map(s=>({s,v:trajectory(PROFILE_RETURNS[PC.profile][s])[101]}));
       document.getElementById('compare-table').innerHTML=`<div class="card"><table class="timing-table"><thead><tr><th>Serie</th><th>Vehículo</th><th style="text-align:right">Valor final</th><th style="text-align:right">vs. Serie A</th></tr></thead><tbody>
         ${finals.map(f=>{const base=finals[0].v;const diff=f.v-base;const isActive=f.s===PC.series;return `<tr class="${isActive?'highlight-row':''}"><td><strong>${SERIES_CONFIG[f.s].label}</strong>${isActive?' ●':''}</td><td>${VEHICLE_CONFIG[SERIES_CONFIG[f.s].vehicle].label}</td><td style="text-align:right;font-feature-settings:'tnum';font-weight:700">${fmt(f.v)}</td><td style="text-align:right;font-feature-settings:'tnum';color:${diff>0?'var(--pos)':'var(--text-2)'}">${f.s==='A'?'—':'+'+fmt(diff)}</td></tr>`;}).join('')}
@@ -2639,6 +3330,7 @@ function renderTmPresets(){
   const expand=s=>{const [m,y]=s.split(' ');const full={Ene:'Enero',Feb:'Febrero',Mar:'Marzo',Abr:'Abril',May:'Mayo',Jun:'Junio',Jul:'Julio',Ago:'Agosto',Sep:'Septiembre',Oct:'Octubre',Nov:'Noviembre',Dic:'Diciembre'};return (full[m]||m)+' '+y;};
   const setTxt=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
   setTxt('ca-from-to',expand(fromLbl)+' → '+expand(toLbl));
+  setTxt('tm-ax-from',expand(fromLbl));setTxt('tm-ax-to',expand(toLbl));setTxt('tm-ax-span',n+' meses');
   setTxt('ca-span',n+' meses');
 }
 function tmAmountChange(inp){
@@ -2678,16 +3370,14 @@ function buildTiming(){
  <div style="font-size:13px;color:var(--pos);font-weight:600;margin-bottom:var(--s4)" id="slider-sub">Si se quedó invertido siempre: sin costo de oportunidad.</div>
  <input type="range" id="timing-slider" min="0" max="30" value="0" style="--p:0%" oninput="onSlider(this.value)">
  <div class="slider-labels"><span>0</span><span>10</span><span>20</span><span>30 meses</span></div></div>
- <div class="sec-head"><span class="sec-num">02</span><span class="sec-t">Escenarios</span></div>
+ <div class="sec-head"><span class="sec-num">02</span><span class="sec-t">Escenarios · capital final y diferencia</span></div>
  <div class="sc-grid mb-6" id="timing-cards"></div>
- <div class="sec-head"><span class="sec-num">03</span><span class="sec-t">Recorrido de la decisión</span></div>
- <div class="card mb-6" id="tm-timeline"></div>
  <div class="chart-wrap mb-5"><div class="flex items-center justify-between mb-4 flex-wrap"><div class="h-m">Trayectoria 2018–2026</div><div class="t-3" style="font-size:12px;font-weight:600"><span id="chart-series-label">${PC.sc.label}</span> · Base $10M</div></div>
- <svg class="chart-svg" id="timing-chart"></svg>
+ <div style="position:relative"><svg class="chart-svg" id="timing-chart"></svg><div id="timing-tip" class="chart-tip" style="display:none"></div></div>
+      <div class="tm-axis"><div><span>Inicio</span> <b id="tm-ax-from">Enero 2018</b></div><div><span>Horizonte</span> <b id="tm-ax-span">103 meses</b></div><div><span>Cierre</span> <b id="tm-ax-to">Julio 2026</b></div></div>
  <div class="chart-legend"><div class="legend-item"><div class="legend-line" style="background:var(--action)"></div><span>Invertido siempre</span></div><div class="legend-item"><div class="legend-line legend-dash" style="border-color:var(--neg)"></div><span id="legend-miss-label">Sin meses perdidos</span></div></div></div>
- <div class="card mb-5"><div class="h-m mb-2">Los mejores meses (2018–2026)</div><div class="t-2 mb-4" style="font-size:13px">Ocurrieron en los períodos de mayor incertidumbre. Quien salió por miedo, los perdió.</div><div class="flex flex-wrap gap-2" id="best-months-display"></div></div>
- <div class="narrative mb-5">Los 5 mejores meses del Fondo Dinámico ${PC.pf.name} entre 2018 y 2026 ocurrieron en 2020 — el año del COVID. Salir en marzo 2020 y volver en julio habría perdido 4 de los 5 mejores meses de toda la historia del fondo. <span class="t-conv" style="font-weight:700;cursor:pointer" onclick="openConviction('permanecer')">Ver convicción →</span></div>
- <div class="flex gap-3 flex-wrap"><button class="btn btn-primary" onclick="go('dcl')">Ver costo de decidir →</button></div></div>`;
+    <nav class="nxt"><a onclick="go('dcl')"><span class="nxt-k">Continuar</span><span class="nxt-t">Costo de decidir</span><span class="nxt-d">Comparar frente a permanecer invertido</span></a></nav>
+  </div>`;
 }
 function onSlider(val){
   val=parseInt(val);const sl=document.getElementById('timing-slider');if(sl)sl.style.setProperty('--p',(val/30*100)+'%');
@@ -2703,6 +3393,9 @@ function onSlider(val){
   }
   const lm=document.getElementById('legend-miss-label');if(lm)lm.textContent=val===0?'Sin meses perdidos':`Perdiendo ${val} mejores meses`;
   drawChart('timing-chart',[{values:base,color:'var(--action)',width:2.5,fill:'#2563EB'},{values:missed,color:'var(--neg)',width:2,dashed:true}]);
+  attachSeriesHover('timing-chart','timing-tip',
+    [{name:'Permanecer invertido',values:base,color:'#2F5FA8'},{name:val===0?'Sin meses perdidos':`Perdiendo ${val} mejores meses`,values:missed,color:'#C0524A'}],
+    ['Inicio · Ene 2018'].concat(MONTHS_LABELS.slice(tmRange().from,tmRange().to)));
   // ── Tarjetas premium de escenarios ──
   const cont=document.getElementById('timing-cards');if(!cont)return;cont.innerHTML='';
   const MSG={0:{t:'Permaneciste invertido',msg:'La disciplina capturó el ciclo completo, incluidas las recuperaciones que siguieron a cada caída.'},
@@ -2714,14 +3407,12 @@ function onSlider(val){
     const t=missA(n,ret),f=t[t.length-1],r=(f/AMT-1)*100,lost=baseF-f,lostPct=baseF>0?(lost/baseF)*100:0;
     const isBase=n===0,isActive=n===val,info=MSG[n]||{t:'Te perdiste '+n+' meses',msg:''};
     const card=document.createElement('div');
-    card.className='sc-card'+(isBase?' sc-base':'')+(isActive?' sc-active':'');
+    card.className='scn'+(isBase?' scn-base':'')+(isActive?' scn-on':'');
     card.innerHTML=`
- <div class="sc-head"><div class="sc-title">${info.t}</div>${isBase?'<span class="sc-flag">Referencia</span>':''}</div>
- <div class="sc-cap mono">${fmt(f)}</div>
- <div class="sc-caplab">Capital final</div>
- <div class="sc-visual"><div class="sc-visual-kept" style="width:${(baseF>0?f/baseF*100:100).toFixed(1)}%;background:${isBase?'var(--pos)':'var(--gray-300)'}"></div>${isBase?'':`<div class="sc-visual-lost" style="width:${(100-(baseF>0?f/baseF*100:100)).toFixed(1)}%"></div>`}</div>
-      ${isBase?`<div class="sc-delta-base">Rentabilidad del período <strong>${r>=0?'+':''}${r.toFixed(1)}%</strong></div>`:`<div class="sc-delta"><span class="sc-delta-amt mono">−${fmt(lost)}</span><span class="sc-delta-pct">${lostPct.toFixed(1)}% menos</span></div>`}
- <div class="sc-line">${info.msg}</div>`;
+      <div class="scn-t">${info.t}</div>
+      <div class="scn-bar"><div style="width:${(baseF>0?f/baseF*100:100).toFixed(1)}%;background:${isBase?'#3F8F68':'#C6D0DC'}"></div></div>
+      <div class="scn-cap mono"><span class="scn-lab">Capital final</span>${fmt(f)}</div>
+      <div class="scn-d mono"><span class="scn-lab">${isBase?'Rentabilidad':'Dejó de ganar'}</span>${isBase?`<span class="scn-ref">${r>=0?'+':''}${r.toFixed(1)}%</span>`:`<span class="scn-loss">−${fmt(lost)}</span>`}</div>`;
     cont.appendChild(card);
   });
   // ── Timeline visual ──
@@ -2775,19 +3466,18 @@ function buildDCL(){
  <div class="compare-grid"><div class="cbox cbox-stayed"><div class="clabel" style="color:var(--action)">Si se quedó invertido</div><div class="cval mono t-pos" id="stayed-val">${fmt(trajectory(PC.ret)[101])}</div><div class="csub" id="stayed-sub">Capital a julio 2026</div></div>
  <div class="cbox cbox-alt"><div class="clabel" style="color:var(--neg)" id="alt-label">Línea de referencia</div><div class="cval mono t-neg" id="alt-val">—</div><div class="csub" id="alt-sub">Selecciona un escenario.</div></div></div>
  <div class="chart-wrap mb-5"><div class="flex items-center justify-between mb-4 flex-wrap"><div class="h-m">Trayectoria · Ene 2018 → Jul 2026</div><div class="t-3" style="font-size:12px;font-weight:600"><span id="dcl-chart-series-label">${PC.sc.label}</span></div></div>
- <svg class="chart-svg" id="dcl-chart"></svg>
+ <div style="position:relative"><svg class="chart-svg" id="dcl-chart"></svg><div id="dcl-tip" class="chart-tip" style="display:none"></div></div>
  <div class="chart-legend"><div class="legend-item"><div class="legend-line" style="background:var(--action)"></div><span id="dcl-legend-stay">${PC.pf.name} ${PC.sc.short} — invertido</span></div><div class="legend-item"><div class="legend-line legend-dash" style="border-color:var(--neg)"></div><span id="dcl-legend-alt">Selecciona un escenario</span></div></div></div>
- <div class="sec-head"><span class="sec-num">01</span><span class="sec-t">Las seis decisiones, comparadas</span></div>
+ <div class="dcl-lead">
+      <div class="dcl-lead-k">Comparación de escenarios · ${PC.sc.label}</div>
+      <h2 class="dcl-lead-t">¿Qué habría pasado con cada decisión?</h2>
+      <p class="dcl-lead-d">Seis caminos posibles desde la caída de marzo 2020, calculados con los retornos reales del Fondo Dinámico ${PC.pf.name}. La primera fila es la referencia: permanecer invertido.</p>
+    </div>
  <div class="dcl-compare mb-6" id="dcl-compare"></div>
- <div class="sec-head"><span class="sec-num">02</span><span class="sec-t">La decisión seleccionada, en detalle</span></div>
- <div class="dcl-flow mb-5" id="dcl-conversation">
- <div class="dclf-step"><div class="dclf-n">01</div><div class="dclf-body"><div class="dclf-q">¿Qué hiciste?</div><div class="dclf-a" id="dcl-what">—</div></div></div>
- <div class="dclf-step"><div class="dclf-n">02</div><div class="dclf-body"><div class="dclf-q">¿Qué ocurrió?</div><div class="dclf-a" id="dcl-why">—</div></div></div>
- <div class="dclf-step dclf-cost"><div class="dclf-n">03</div><div class="dclf-body"><div class="dclf-q">¿Cuánto dinero costó?</div><div class="dclf-a" id="dcl-howmuch">—</div></div></div>
- <div class="dclf-step"><div class="dclf-n">04</div><div class="dclf-body"><div class="dclf-q">¿Cuánto tomó recuperarlo?</div><div class="dclf-a" id="dcl-recovery">—</div></div></div>
- <div class="dclf-step"><div class="dclf-n">05</div><div class="dclf-body"><div class="dclf-q">¿Con qué referencia se comparó?</div><div class="dclf-a" id="dcl-lesson">—</div><div id="dcl-ref" class="dcl-ref" style="display:none"></div></div></div>
- </div>
- <div class="flex gap-3 flex-wrap"><button class="btn btn-present" onclick="go('summary')"> Generar Resumen</button><button class="btn btn-ghost" onclick="go('timing')">← Market Timing</button></div></div>`;
+ <div id="dcl-conversation" style="display:none"><span id="dcl-what"></span><span id="dcl-why"></span><span id="dcl-howmuch"></span><span id="dcl-recovery"></span><span id="dcl-lesson"></span><span id="dcl-ref"></span></div>
+ <div class="flex gap-3 flex-wrap"><button class="btn btn-ghost" onclick="go('timing')">← Market Timing</button></div>
+    
+  </div>`;
 }
 /* ── FUENTES OFICIALES (Fase mejora PM) ── */
 const TPM_MONTHLY = [2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.75,2.75,2.75,3,3,3,3,3,2.5,2.5,2.5,2,1.75,1.75,1.75,1.75,1.75,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.75,1.5,2.75,2.75,4,5.5,5.5,7,7,8.25,9,9.75,9.75,10.75,11.25,11.25,11.25,11.25,11.25,11.25,11.25,11.25,11.25,10.25,10.25,9.5,9,9,8.25,8.25,7.25,7.25,6.5,6,5.75,5.75,5.75,5.5,5.25,5.25,5,5,5,5,5,5,5,4.75,4.75,4.75,4.75,4.75,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5]; // TPM % mensual (fin de mes) Ene2018–Jul2026 · BCCh (jul-2026 = 4,50%, sin cambios)
@@ -2869,25 +3559,19 @@ function getScenarios(){
 function animateNumber(el,from,to,dur=500){const t0=performance.now(),d=to-from;(function step(t){const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=fmt(Math.round(from+d*e));if(p<1)requestAnimationFrame(step);})(performance.now());}
 function renderDclCompare(activeIdx){
   const el=document.getElementById('dcl-compare');if(!el)return;
-  const scens=getScenarios(),stayF=scens[0].final,alts=scens.slice(1);
-  const maxLoss=Math.max(...alts.map(s=>stayF-s.final));
+  const sc=getScenarios(),stayF=sc[0].final;
   el.innerHTML=`
- <div class="dclb ${activeIdx===0?'on':''}" onclick="selectScen(0,document.querySelectorAll('.scen-pill')[0])">
- <div class="dclb-k">Escenario de referencia</div>
- <div class="dclb-t">Mantenerse invertido</div>
- <div class="dclb-cap mono">${fmt(stayF)}</div>
- <div class="dclb-s">Capital final si nunca salió del fondo</div>
- </div>
- <div class="dcla-grid">
-      ${alts.map((s,i)=>{const idx=i+1,diff=stayF-s.final,pct=(diff/stayF)*100,mag=maxLoss>0?(diff/maxLoss*100):0;
-        return `<div class="dcla ${activeIdx===idx?'on':''}" onclick="selectScen(${idx},document.querySelectorAll('.scen-pill')[${idx}])">
- <div class="dcla-t">${s.label}</div>
- <div class="dcla-cost mono">−${fmt(diff)}</div>
- <div class="dcla-k">Dejó de ganar</div>
- <div class="dcla-track"><div class="dcla-fill" style="width:${mag.toFixed(1)}%"></div></div>
- <div class="dcla-foot"><span>Final <strong class="mono">${fmt(s.final)}</strong></span><span class="dcla-pct">${pct.toFixed(1)}%</span></div>
- </div>`;}).join('')}
- </div>`;
+    <table class="dclt"><thead><tr>
+      <th>Escenario</th><th class="ta-r">Capital final</th><th class="ta-r">Diferencia</th><th>Lectura</th>
+    </tr></thead><tbody>
+    ${sc.map((s,i)=>{const diff=stayF-s.final,base=i===0;
+      return `<tr class="${i===activeIdx?'on':''}${base?' base':''}" onclick="selectScen(${i},document.querySelectorAll('.scen-pill')[${i}])">
+        <td class="dclt-n">${s.label}</td>
+        <td class="ta-r mono">${fmt(s.final)}</td>
+        <td class="ta-r mono ${base?'t-3':'t-neg'}">${base?'—':'−'+fmt(diff)}</td>
+        <td class="dclt-l">${base?'Referencia de comparación':s.lesson||''}</td>
+      </tr>`;}).join('')}
+    </tbody></table>`;
 }
 function selectScen(idx,el){
   _dclAlts=null;const scens=getScenarios();
@@ -2906,17 +3590,14 @@ function selectScen(idx,el){
   document.getElementById('dcl-legend-alt').textContent=isBase?'Selecciona un escenario':sc.altLabel;
   // conversación de asesoría
   const diffFmt=fmt(diff);
-  document.getElementById('dcl-what').textContent=sc.what;
-  document.getElementById('dcl-why').textContent=sc.why;
-  document.getElementById('dcl-howmuch').innerHTML=isBase?'La disciplina no tuvo costo: es la línea de referencia contra la que se miden las demás decisiones.':`Esta decisión habría reducido el patrimonio final en <span class="amt t-neg">${diffFmt}</span> respecto a permanecer invertido — un costo de oportunidad del <span class="amt t-neg">${((diff/stayF)*100).toFixed(1)}%</span>.`;
-  document.getElementById('dcl-lesson').textContent=sc.lesson;
   const recEl=document.getElementById('dcl-recovery');
   if(recEl){const dd=maxDrawdown(PC.ret);
     recEl.textContent=isBase?`El fondo recuperó su máximo previo en ${dd.recoveryMonths==null?'—':dd.recoveryMonths+(dd.recoveryMonths===1?' mes':' meses')} (${dd.troughLabel} → ${dd.recLabel}), sin que el cliente tuviera que hacer nada.`:`Quien permaneció invertido recuperó el máximo previo en ${dd.recoveryMonths==null?'—':dd.recoveryMonths+(dd.recoveryMonths===1?' mes':' meses')} (${dd.recLabel}). Esta decisión, en cambio, no recupera la diferencia: el costo es permanente.`;}
   renderDclCompare(idx);
-  const refEl=document.getElementById('dcl-ref');
-  if(sc.ref){refEl.style.display='inline-block';refEl.textContent=sc.ref;}else{refEl.style.display='none';}
   drawChart('dcl-chart',[{values:scens[0].traj,color:'var(--action)',width:2.5,fill:'#2563EB'},{values:sc.traj,color:isBase?'rgba(100,116,139,0.2)':sc.color,width:2,dashed:!isBase,opacity:isBase?0.3:1}],{markIdx:MARCH_2020_IDX+1});
+  attachSeriesHover('dcl-chart','dcl-tip',
+    [{name:'Permanecer invertido',values:scens[0].traj,color:'#2F5FA8'}].concat(isBase?[]:[{name:sc.altLabel||sc.label,values:sc.traj,color:'#C0524A'}]),
+    ['Inicio · Ene 2018'].concat(MONTHS_LABELS));
 }
 
 /* ── SUMMARY ── */
@@ -3016,8 +3697,8 @@ function renderProfileEngine(){
     const {profile,bracket}=scoreToProfile(total);
     const p=PROFILES[profile];
     const dots='●'.repeat(p.risk)+'○'.repeat(5-p.risk);
-    el.innerHTML=`<div class="survey-wrap" style="max-width:820px">
- <div class="result-hero">
+    el.innerHTML=`<div class="survey-wrap rw-${profile}" style="max-width:820px">
+ <div class="result-hero rh-${profile}">
  <div class="result-eyebrow">Perfil detectado</div>
  <div class="result-profile" style="color:var(--c-${profile})">${p.name}</div>
  <div class="result-score">
@@ -3038,10 +3719,10 @@ function renderProfileEngine(){
  </div>
  <div class="g2 mb-4">
  <div class="card"><div class="conv-block-label">Convicciones más relevantes</div>
-          ${p.convictions.map(cid=>`<div class="list-row" style="margin-bottom:var(--s2);padding:var(--s3) var(--s4)" onclick="selectCard('${profile}');openConviction('${cid}')"><div class="list-row-icon" style="width:34px;height:34px;font-size:16px">${CONVICTIONS[cid].icon}</div><div style="flex:1;font-size:13px;font-weight:600">${CONVICTIONS[cid].title.slice(0,60)}…</div></div>`).join('')}
+          ${p.convictions.map(cid=>`<div class="pe-row" onclick="selectCard('${profile}');openConviction('${cid}')"><div style="flex:1;font-size:13px;font-weight:600">${CONVICTIONS[cid].title.slice(0,60)}…</div></div>`).join('')}
  </div>
  <div class="card"><div class="conv-block-label">Decisiones típicas</div>
-          ${p.decisions.map(did=>`<div class="list-row" style="margin-bottom:var(--s2);padding:var(--s3) var(--s4)" onclick="selectCard('${profile}');openDecision('${did}')"><div class="list-row-icon" style="width:34px;height:34px;font-size:16px">${DECISIONS[did].icon}</div><div style="flex:1;font-size:13px;font-weight:600">${DECISIONS[did].title.slice(0,56)}…</div></div>`).join('')}
+          ${p.decisions.map(did=>`<div class="pe-row" onclick="selectCard('${profile}');openDecision('${did}')"><div style="flex:1;font-size:13px;font-weight:600">${DECISIONS[did].title.slice(0,56)}…</div></div>`).join('')}
  </div>
  </div>
  <div class="card mb-5" style="border-left:4px solid var(--warn);background:var(--warn-bg)"><div class="conv-block-label" style="color:var(--warn)">Errores conductuales frecuentes en este perfil</div>
@@ -3125,10 +3806,11 @@ function renderDiscovery(){
   const sum=document.getElementById('ctx-summary');
   const p=PC.pf;
   sum.setAttribute('data-fund',PC.profile);
+  document.body.setAttribute('data-fund',PC.profile);
   sum.innerHTML=`
     <div class="icb-accent"></div>
     <div class="icb-body">
-      <div class="icb-fund">${FUND_DOCS[PC.profile].name}</div>
+      <div class="icb-fund">${FUND_DOCS[PC.profile].name.replace(/^CONSORCIO /i,"Consorcio ")}</div>
       <div class="icb-meta">
         <span>Serie ${PC.sc.label.replace('Serie ','')}</span>
         <span>Producto ${PC.vc.label}</span>
@@ -3154,6 +3836,7 @@ function applyProductContext(){
   _dclAlts=null;
   _portStep=0;
   // Product Discovery Layer reacts (cards + context summary)
+  renderSidebarActive();
   renderDiscovery();
   // Rebuild screens that depend heavily on PC by re-mounting and restoring view
   const current=_currentScreen;
@@ -3171,22 +3854,31 @@ const TITLES={home:'Inicio · Julio 2026','profile-engine':'Perfilamiento del In
 let _currentScreen='home';
 function showScreen(id,silent){
   document.body.setAttribute('data-screen',id);
+  document.querySelectorAll('.sb-i').forEach(n=>n.classList.toggle('on',n.getAttribute('data-nav')===id));
   _currentScreen=id;
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const t=document.getElementById('screen-'+id);if(t)t.classList.add('active');
   document.getElementById('ctx-title').textContent=TITLES[id]||id;
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.nav===id));
-  const moreBtn=document.querySelector('.nav-more');if(moreBtn)moreBtn.classList.toggle('active',['profile-engine','market','timing','dcl','portfolio','performance','summary'].includes(id));
+  const moreBtn=document.querySelector('.nav-more');if(moreBtn)moreBtn.classList.toggle('active',['profile-engine','market','timing','dcl','portfolio','performance'].includes(id));
   // per-screen hydration
   if(id==='home'){renderHomeProfiles();renderHomeBrief();renderHomeActiveContext();}
   if(id==='market')renderMarketEvents();
   if(id==='convictions')renderConvList();
   if(id==='decisions')renderDecisionsList();
-  if(id==='portfolio'){renderPortHero();renderPortStatus();renderPortExecSummary();renderPortComposition();renderPortContent();renderPortDocs();}
+  if(id==='portfolio'){setTimeout(()=>pfTab(_pfTab),20);renderPortHero();renderPortStatus();renderPortExecSummary();renderPortComposition();renderPortContent();renderPortDocs();}
   if(id==='performance'){renderPerfTabs();renderPerfContent();}
   if(id==='timing'){setTimeout(()=>{renderTmPresets();onSlider(parseInt(document.getElementById('timing-slider').value||0));renderBestMonths();},30);}
   if(id==='dcl'){setTimeout(()=>{_dclAlts=null;selectScen(0,document.querySelectorAll('.scen-pill')[0]);},30);}
   if(!silent){closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}
+}
+function goNav(id){go(id);if(window.innerWidth<=1024)closeSidebar();}
+function toggleSidebar(){document.body.classList.toggle('sb-open');}
+function closeSidebar(){document.body.classList.remove('sb-open');}
+function renderSidebarActive(){
+  const el=document.getElementById('sb-active');if(!el)return;
+  el.innerHTML=`<span class="sba-rule" style="background:var(--c-${PC.profile})"></span>
+    <span class="sba-body"><span class="sba-n">${PC.pf.name}</span><span class="sba-s">${PC.sc.label} · ${PC.vc.label}</span></span>`;
 }
 function go(id){if(id==='questions')return;
   if(id==='profile-engine'){openProfileEngine();return;}
@@ -3248,12 +3940,29 @@ function renderMeetingView(){
  <div class="mm-eyebrow">Su estrategia de inversión</div>
  <div class="mm-profile">${p.name}</div>
  <div class="mm-obj">${p.obj}. ${p.enfoque}.</div>
- <div class="mm-mix"><div style="width:${p.rv}%;background:var(--c-${p.key})"></div></div>
+      <div class="mm-mix"><div style="width:${p.rv}%;background:var(--c-${p.key})"></div></div>
+      <div class="mm-breakdown">${(()=>{
+        const comp=PORTFOLIO_COMP[PC.vehicle][PC.profile];
+        const rv=comp.classes.find(x=>x.name==='Acciones'),rf=comp.classes.find(x=>x.name==='Deuda');
+        const sub=n=>(rv&&(rv.sub||[]).find(s=>s.n===n))||{p:0};
+        const dev=sub('Desarrollados').p, eme=(sub('Emergentes').p||0)+(sub('Asia').p||0)+(sub('Latinoamérica').p||0);
+        const topOf=cls=>{const l=(comp.instruments||[]).filter(i=>i.c&&i.c.indexOf(cls)>=0).sort((a,b)=>b.p-a.p);return l[0];};
+        const tDev=topOf('Desarrollados'), tEme=topOf('Asia')||topOf('Emergentes')||topOf('Latinoamérica');
+        return `
+        <div class="mmb-row"><span class="mmb-k">Renta variable</span><span class="mmb-v">${rv?rv.pct:0}%</span></div>
+        <div class="mmb-sub"><span>Mercados desarrollados</span><b>${dev.toFixed(1)}%</b></div>
+        ${tDev?`<div class="mmb-pos">Principal posición · ${tDev.n} <b>${tDev.p}%</b></div>`:''}
+        <div class="mmb-sub"><span>Mercados emergentes</span><b>${eme.toFixed(1)}%</b></div>
+        ${tEme?`<div class="mmb-pos">Principal posición · ${tEme.n} <b>${tEme.p}%</b></div>`:''}
+        <div class="mmb-row mmb-rowtop"><span class="mmb-k">Renta fija</span><span class="mmb-v">${rf?rf.pct:0}%</span></div>
+        ${(()=>{const t=(comp.instruments||[]).filter(i=>i.c&&i.c.indexOf('Deuda')>=0).sort((a,b)=>b.p-a.p)[0];
+          return t?`<div class="mmb-pos">Principal posición · ${t.n} <b>${t.p}%</b></div>`:'';})()}`;})()}
+      </div>
  <div class="mm-mixleg"><span>${p.rv}% Renta Variable</span><span style="color:rgba(255,255,255,.6)">${p.rf}% Renta Fija</span></div>
  </div>
  <div class="mm-stats">
  <div class="mm-stat"><div class="k">Último mes</div><div class="v ${d.may>=0?'t-pos':'t-neg'}">${fmtPct(d.may)}</div><div class="s">Julio 2026</div></div>
- <div class="mm-stat"><div class="k">Acumulado 2026</div><div class="v ${d.ytd>=0?'t-pos':'t-neg'}">${fmtPct(d.ytd)}</div><div class="s">Enero – Mayo</div></div>
+ <div class="mm-stat"><div class="k">Acumulado 2026</div><div class="v ${d.ytd>=0?'t-pos':'t-neg'}">${fmtPct(d.ytd)}</div><div class="s">Enero – Julio</div></div>
  <div class="mm-stat"><div class="k">Perfil de riesgo</div><div class="v" style="font-size:27px;letter-spacing:2px">${dots}</div><div class="s">Horizonte ${p.horizon} · Vol. ${p.vol} anual</div></div>
  </div>
  <div class="mm-row">
