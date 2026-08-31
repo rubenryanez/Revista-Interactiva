@@ -4192,189 +4192,213 @@ function openExecSummary(){
   if(!comp){ console.error('[Resumen] composición no disponible'); return; }
   const acc=(getComputedStyle(document.body).getPropertyValue('--fund-accent')||'#2F5FA8').trim();
   const nd='—';
-  // ── validaciones ──
   const v=validateHorizons(PC.ret,'Resumen '+pf.name+'/'+PC.series);
   const H=v.h, st=monthStats(PC.ret);
   const cur=CURRENCY_EXPOSURE[PC.profile]||null;
   let fee=nd; try{const f=fundFee(); if(Number.isFinite(f)) fee=f.toFixed(2).replace('.',',')+'%';}catch(e){}
   const okN=function(x){return x!=null&&Number.isFinite(x);};
-  // ── composición ──
-  const rv=comp.classes.find(function(x){return x.name==='Acciones';}),
-        rf=comp.classes.find(function(x){return x.name==='Deuda';}),
-        al=comp.classes.find(function(x){return x.name==='Alternativo';});
+  const cl=function(n){return comp.classes.find(function(x){return x.name===n;});};
+  const rv=cl('Acciones'), rf=cl('Deuda'), al=cl('Alternativo');
   const RVp=rv?rv.pct:0, RFp=rf?rf.pct:0, ALp=al?al.pct:0;
   const caja=+(100-RVp-RFp-ALp).toFixed(1);
-  const segs=[{n:'Renta variable',v:RVp,c:acc},{n:'Renta fija',v:RFp,c:'#7B8794'},
-              {n:'Alternativos',v:ALp,c:'#4E7C8A'}].concat(caja>0.05?[{n:'Caja',v:caja,c:'#DDE3EA'}]:[])
-              .filter(function(x){return x.v>0;});
-  const R=44,SW=15,C=2*Math.PI*R; let off=0;
-  const arcs=segs.map(function(s){const len=C*s.v/100;
-    const el='<circle cx="60" cy="60" r="'+R+'" fill="none" stroke="'+s.c+'" stroke-width="'+SW+'" stroke-dasharray="'+len.toFixed(2)+' '+(C-len).toFixed(2)+'" stroke-dashoffset="'+(-off).toFixed(2)+'" transform="rotate(-90 60 60)"/>';
-    off+=len;return el;}).join('');
-  // ── gráfico lineal de horizontes ──
-  const HP=[['1A',H.y1],['2A',H.y2],['3A',H.y3],['5A',H.y5],['Inicio',H.sinceStart]].filter(function(x){return okN(x[1]);});
-  let chart='<p class="na">Datos de rentabilidad no disponibles para este período.</p>';
+  // ── Donut concéntrico: anillo interior clases, exterior subclases ──
+  function shades(hex,n){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+    const o=[];for(let i=0;i<n;i++){const t=n===1?0:0.08+0.44*(i/(n-1));
+      o.push('rgb('+Math.round(r+(255-r)*t)+','+Math.round(g+(255-g)*t)+','+Math.round(b+(255-b)*t)+')');}return o;}
+  const inner=[];
+  if(RVp>0) inner.push({n:'Renta variable',v:RVp,c:acc,k:'Acciones'});
+  if(RFp>0) inner.push({n:'Renta fija',v:RFp,c:'#6B7684',k:'Deuda'});
+  if(ALp>0) inner.push({n:'Alternativos',v:ALp,c:'#4E7C8A',k:'Alternativo'});
+  if(caja>0.05) inner.push({n:'Caja',v:caja,c:'#D8DEE6',k:null});
+  const outer=[];
+  inner.forEach(function(g){
+    if(!g.k){outer.push({n:'Caja',v:g.v,c:'#D8DEE6'});return;}
+    const C=cl(g.k), subs=(C&&C.sub?C.sub.slice():[]).sort(function(a,b){return b.p-a.p;});
+    if(!subs.length){outer.push({n:g.n,v:g.v,c:g.c});return;}
+    const cols=shades(g.c.indexOf('#')===0?g.c:'#6B7684',subs.length);
+    const pre=(g.k==='Acciones'?'RV ':(g.k==='Deuda'?'RF ':''));
+    subs.forEach(function(s,i){outer.push({n:pre+s.n,v:s.p,c:cols[i]});});
+  });
+  const CX=170,CY=132,rO=96,wO=18,rI=70,wI=22;
+  function ring(list,rad,w,tot){let off=0;const C=2*Math.PI*rad;
+    return list.map(function(s){const len=C*(s.v/tot);
+      const el='<circle cx="'+CX+'" cy="'+CY+'" r="'+rad+'" fill="none" stroke="'+s.c+'" stroke-width="'+w+'" stroke-dasharray="'+len.toFixed(2)+' '+(C-len).toFixed(2)+'" stroke-dashoffset="'+(-off).toFixed(2)+'" transform="rotate(-90 '+CX+' '+CY+')"/>';
+      s._mid=(off+len/2)/C*360; off+=len; return el;}).join('');}
+  const sIn=inner.reduce(function(a,b){return a+b.v;},0)||100;
+  const sOut=outer.reduce(function(a,b){return a+b.v;},0)||100;
+  const aOut=ring(outer,rO,wO,sOut), aIn=ring(inner,rI,wI,sIn);
+  const labels=outer.filter(function(s){return s.v/sOut*100>=7;}).map(function(s){
+    const a=(s._mid-90)*Math.PI/180;
+    const x1=CX+Math.cos(a)*(rO+wO/2), y1=CY+Math.sin(a)*(rO+wO/2);
+    const x2=CX+Math.cos(a)*(rO+wO/2+14), y2=CY+Math.sin(a)*(rO+wO/2+14);
+    const rt=Math.cos(a)>=0, x3=rt?x2+16:x2-16, tx=rt?x3+4:x3-4;
+    return '<polyline points="'+x1.toFixed(1)+','+y1.toFixed(1)+' '+x2.toFixed(1)+','+y2.toFixed(1)+' '+x3.toFixed(1)+','+y2.toFixed(1)+'" fill="none" stroke="#C3CBD4" stroke-width=".8"/>'+
+      '<text x="'+tx.toFixed(1)+'" y="'+(y2-1).toFixed(1)+'" text-anchor="'+(rt?'start':'end')+'" font-size="11.5" font-weight="700" fill="#1A2233">'+s.v.toFixed(1).replace('.',',')+'%</text>'+
+      '<text x="'+tx.toFixed(1)+'" y="'+(y2+10).toFixed(1)+'" text-anchor="'+(rt?'start':'end')+'" font-size="8" fill="#7A8492">'+s.n+'</text>';}).join('');
+  // ── Gráfico de rentabilidad ──
+  const HP=[['1 año',H.y1],['2 años',H.y2],['3 años',H.y3],['5 años',H.y5],['Desde inicio',H.sinceStart]].filter(function(x){return okN(x[1]);});
+  let perf='<p class="na">Datos no disponibles para este período.</p>';
   if(HP.length>=2){
-    const W=470,Hh=84,pd={t:22,r:24,b:16,l:24};
+    const W=520,Hh=150,pd={t:34,r:26,b:30,l:26};
     const cW=W-pd.l-pd.r, cH=Hh-pd.t-pd.b;
     const vs=HP.map(function(x){return x[1];});
     let lo=Math.min.apply(null,vs), hi=Math.max.apply(null,vs);
-    const sp=(hi-lo)||1; lo-=sp*.35; hi+=sp*.30;
+    const sp=(hi-lo)||1; lo-=sp*.45; hi+=sp*.35;
     const X=function(i){return pd.l+i/(HP.length-1)*cW;};
     const Y=function(x){return pd.t+cH-(x-lo)/(hi-lo)*cH;};
-    const ln=HP.map(function(x,i){return X(i).toFixed(1)+','+Y(x[1]).toFixed(1);}).join(' ');
-    const dots=HP.map(function(x,i){
-      return '<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(x[1]).toFixed(1)+'" r="3.2" fill="#fff" stroke="'+acc+'" stroke-width="1.8"/>'+
-        '<text x="'+X(i).toFixed(1)+'" y="'+(Y(x[1])-8).toFixed(1)+'" text-anchor="middle" font-size="8.5" font-weight="700" fill="#111827">'+fmtPctCL(x[1])+'</text>'+
-        '<text x="'+X(i).toFixed(1)+'" y="'+(pd.t+cH+13)+'" text-anchor="middle" font-size="7" font-weight="600" fill="#8B95A3">'+x[0]+'</text>';}).join('');
-    chart='<svg viewBox="0 0 '+W+' '+Hh+'" class="hzsvg">'+
-      '<line x1="'+pd.l+'" x2="'+(pd.l+cW)+'" y1="'+(pd.t+cH)+'" y2="'+(pd.t+cH)+'" stroke="#E4E9F0" stroke-width=".6"/>'+
-      '<polyline points="'+ln+'" fill="none" stroke="'+acc+'" stroke-width="1.5" stroke-linejoin="round"/>'+dots+'</svg>';
+    const area=HP.map(function(x,i){return X(i).toFixed(1)+','+Y(x[1]).toFixed(1);}).join(' ');
+    perf='<svg viewBox="0 0 '+W+' '+Hh+'" class="gsvg" preserveAspectRatio="xMidYMid meet">'+
+      '<polygon points="'+pd.l+','+(pd.t+cH)+' '+area+' '+(pd.l+cW)+','+(pd.t+cH)+'" fill="'+acc+'" opacity=".07"/>'+
+      '<line x1="'+pd.l+'" x2="'+(pd.l+cW)+'" y1="'+(pd.t+cH)+'" y2="'+(pd.t+cH)+'" stroke="#DDE3EA" stroke-width="1"/>'+
+      '<polyline points="'+area+'" fill="none" stroke="'+acc+'" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>'+
+      HP.map(function(x,i){return '<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(x[1]).toFixed(1)+'" r="4.2" fill="#fff" stroke="'+acc+'" stroke-width="2.2"/>'+
+        '<text x="'+X(i).toFixed(1)+'" y="'+(Y(x[1])-13).toFixed(1)+'" text-anchor="middle" font-size="13" font-weight="700" fill="#1A2233">'+fmtPctCL(x[1])+'</text>'+
+        '<text x="'+X(i).toFixed(1)+'" y="'+(pd.t+cH+17)+'" text-anchor="middle" font-size="9" font-weight="600" fill="#7A8492">'+x[0]+'</text>';}).join('')+'</svg>';
   }
-  // ── exposiciones: 3 buckets por clase, peso del bucket ──
+  // ── Exposiciones ──
   const insOf=function(pref,sub){return (comp.instruments||[]).filter(function(i){
-    return i.c&&i.c.indexOf(pref)===0&&i.c.indexOf(sub)>=0;}).map(function(i){return i.n;}).slice(0,3);};
-  const expCol=function(cl,pref,title){
-    if(!cl||!cl.sub||!cl.sub.length) return '';
-    const top=cl.sub.slice().sort(function(a,b){return b.p-a.p;}).slice(0,3);
-    return '<div class="expc"><div class="expk">'+title+' · '+cl.pct.toFixed(1).replace('.',',')+'%</div>'+
+    return i.c&&i.c.indexOf(pref)===0&&i.c.indexOf(sub)>=0;}).map(function(i){return i.n;}).slice(0,2);};
+  const DESC={'Desarrollados':'Compañías de mercados desarrollados, principalmente EE.UU.','Chile':'Emisores locales.',
+    'Asia':'Compañías de mercados asiáticos.','Latinoamérica':'Emisores de la región latinoamericana.',
+    'Europa':'Compañías europeas.','Japón':'Mercado japonés.','Emergentes':'Crédito corporativo de mercados emergentes.',
+    'High Yield Global':'Crédito global de mayor rendimiento.','Investment Grade Global':'Deuda corporativa de grado de inversión.',
+    'Investment Grade':'Deuda corporativa de grado de inversión.','Alternativo':'Estrategias de baja correlación.'};
+  const expOf=function(C,pref,title,col){
+    if(!C||!C.sub||!C.sub.length)return '';
+    const top=C.sub.slice().sort(function(a,b){return b.p-a.p;}).slice(0,2);
+    return '<div class="xg"><div class="xgk" style="color:'+col+'">'+title+' · '+C.pct.toFixed(1).replace('.',',')+'%</div>'+
       top.map(function(s){const ins=insOf(pref,s.n);
-        return '<div class="expb"><div class="expbh"><span>'+s.n+'</span><b>'+s.p.toFixed(1).replace('.',',')+'%</b></div>'+
-          (ins.length?'<div class="expbi">'+ins.join(' · ')+'</div>':'')+'</div>';}).join('')+'</div>';};
-  // ── gestión del mes con motor de aplicabilidad ──
+        return '<div class="xb"><div class="xbh"><span>'+s.n+'</span><b>'+s.p.toFixed(1).replace('.',',')+'%</b></div>'+
+          '<div class="xbd">'+(DESC[s.n]||'')+(ins.length?' <em>'+ins.join(' · ')+'</em>':'')+'</div></div>';}).join('')+'</div>';};
+  // ── Gestión ──
   let acts=[];
   try{ acts=Object.keys(DECISION_SCOPE).map(function(id){
     const a=decisionApplicability(PC.profile,id);
-    return a.applies?DECISION_SCOPE[id].globalText:null;}).filter(Boolean).slice(0,3); }catch(e){}
-  const gest = acts.length ? acts.map(function(t){return '<li>'+t+'</li>';}).join('')
-    : '<li class="na">Las principales rotaciones tácticas del mes no generaron una modificación directa en esta estrategia.</li>';
+    return a.applies?DECISION_SCOPE[id].globalText:null;}).filter(Boolean).slice(0,3);}catch(e){}
+  const gest=acts.length?acts.map(function(t){return '<li>'+t+'</li>';}).join('')
+    :'<li class="na">Las principales rotaciones tácticas del mes no generaron una modificación directa en esta estrategia.</li>';
   const fs=factsheetUrl();
   const w=window.open('','_blank');
   w.document.write('<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">'+
   '<title>Resumen ejecutivo · Fondo Dinámico '+pf.name+'</title>'+
   '<link rel="preconnect" href="https://fonts.googleapis.com">'+
-  '<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">'+
+  '<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">'+
   '<style>'+
-  '@page{size:A4 portrait;margin:10mm}'+
+  '@page{size:A4 landscape;margin:0}'+
   '*{box-sizing:border-box;margin:0;padding:0}'+
-  'body{font-family:Manrope,-apple-system,sans-serif;color:#111827;background:#EEF1F5;padding:14px;font-size:10px;line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact}'+
-  '.pg{width:190mm;min-height:270mm;background:#fff;margin:0 auto;padding:0 0 5mm;display:flex;flex-direction:column}'+
+  'body{font-family:Montserrat,-apple-system,sans-serif;color:#1A2233;background:#E8ECF1;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact}'+
+  '.sheet{width:1600px;height:900px;background:#fff;margin:0 auto;display:flex;flex-direction:column;overflow:hidden;position:relative}'+
+  '.accent{height:6px;background:'+acc+'}'+
   /* header */
-  '.hd{border-top:5px solid '+acc+';padding:5mm 9mm 3.5mm;border-bottom:1px solid #E4E9F0}'+
-  '.hd-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3mm}'+
-  '.hd-b{font-size:8.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B95A3}'+
-  '.hd-d{font-size:8.5px;font-weight:600;color:#8B95A3;letter-spacing:.06em}'+
-  '.hd-n{font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:1.5mm}'+
-  '.hd-s{font-size:10.5px;font-weight:600;color:'+acc+';margin-bottom:1.5mm}'+
-  '.hd-o{font-size:10px;color:#5B6675}'+
-  /* kpi band */
-  '.kpi{display:grid;grid-template-columns:repeat(4,1fr);padding:3.4mm 9mm;border-bottom:1px solid #E4E9F0;background:#FAFBFC}'+
-  '.kpi>div{padding:0 6mm;border-right:1px solid #E4E9F0}'+
+  '.hd{display:flex;justify-content:space-between;align-items:flex-end;padding:26px 46px 20px;border-bottom:1px solid #E4E9F0}'+
+  '.hd-l{min-width:0}'+
+  '.hd-b{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#8B95A3;margin-bottom:12px}'+
+  '.hd-n{font-size:40px;font-weight:700;letter-spacing:-.028em;line-height:1;margin-bottom:9px}'+
+  '.hd-m{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:'+acc+'}'+
+  '.hd-m i{width:4px;height:4px;border-radius:50%;background:#C3CBD4;display:inline-block}'+
+  '.hd-o{font-size:13px;color:#6B7684;margin-top:7px}'+
+  '.hd-r{text-align:right;flex:0 0 auto}'+
+  '.hd-d{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8B95A3}'+
+  '.hd-dv{font-size:19px;font-weight:700;margin-top:5px}'+
+  /* kpi */
+  '.kpi{display:grid;grid-template-columns:repeat(5,1fr);padding:20px 46px;background:#F7F9FB;border-bottom:1px solid #E4E9F0}'+
+  '.kpi>div{padding:0 26px;border-right:1px solid #E1E7EE}'+
   '.kpi>div:first-child{padding-left:0}.kpi>div:last-child{border-right:none;padding-right:0}'+
-  '.kpi b{display:block;font-size:17px;font-weight:800;letter-spacing:-.025em;line-height:1;margin-bottom:1mm}'+
-  '.kpi span{font-size:8px;color:#8B95A3;letter-spacing:.02em}'+
-  /* secciones */
-  '.sec{padding:3.4mm 9mm;border-bottom:1px solid #E4E9F0}'+
-  '.sec:last-of-type{border-bottom:none}'+
-  '.sk{font-size:8px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#8B95A3;margin-bottom:2.5mm}'+
-  '.g2{display:grid;grid-template-columns:1fr 1fr;gap:8mm}'+
-  '.dn{display:flex;align-items:center;gap:5mm}'+
-  '.dn svg{width:22mm;height:22mm;flex:0 0 auto}'+
-  '.dnl{display:flex;flex-direction:column;gap:2mm;flex:1}'+
-  '.dnl span{display:flex;align-items:center;gap:2.5mm;font-size:9px;color:#374151}'+
-  '.dnl i{width:2.6mm;height:2.6mm;border-radius:.6mm;flex:0 0 auto}'+
-  '.dnl b{margin-left:auto;font-weight:700;color:#111827}'+
-  '.stk{display:flex;height:7mm;border-radius:1.2mm;overflow:hidden;margin-bottom:2.5mm}'+
-  '.stk div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:8.5px;font-weight:700}'+
-  '.hzsvg{width:100%;height:auto;display:block}'+
-  '.note{font-size:7.5px;color:#8B95A3;line-height:1.45;margin-top:2mm}'+
-  '.note b{color:#5B6675;font-weight:700}'+
-  '.na{font-size:9px;color:#9CA3AF}'+
+  '.kpi b{display:block;font-size:26px;font-weight:700;letter-spacing:-.024em;line-height:1;margin-bottom:7px}'+
+  '.kpi span{font-size:10.5px;font-weight:500;color:#8B95A3;letter-spacing:.02em}'+
+  /* cuerpo */
+  '.body{flex:1;display:grid;grid-template-columns:400px 1fr 340px;gap:0;min-height:0}'+
+  '.col{padding:24px 30px;border-right:1px solid #E4E9F0;display:flex;flex-direction:column;min-height:0}'+
+  '.col:first-child{padding-left:46px}.col:last-child{border-right:none;padding-right:46px}'+
+  '.gt{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#1A2233;margin-bottom:3px}'+
+  '.gs{font-size:10px;color:#8B95A3;margin-bottom:14px}'+
+  '.gsvg{width:100%;height:auto;display:block}'+
+  '.dsvg{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}'+
+  '.lg{display:flex;flex-direction:column;gap:7px;margin-top:14px}'+
+  '.lg span{display:flex;align-items:center;gap:8px;font-size:11px;color:#3C4654}'+
+  '.lg i{width:9px;height:9px;border-radius:2px;flex:0 0 auto}'+
+  '.lg b{margin-left:auto;font-weight:700;color:#1A2233}'+
+  '.note{font-size:9px;color:#98A2AF;line-height:1.5;margin-top:12px}'+
+  '.note b{color:#6B7684;font-weight:600}'+
+  '.na{font-size:11px;color:#98A2AF}'+
   /* comportamiento */
-  '.mh{display:flex;gap:6mm;margin-bottom:2.5mm}'+
+  '.mh{display:flex;gap:26px;margin-bottom:10px}'+
   '.mh div{display:flex;flex-direction:column}'+
-  '.mh b{font-size:15px;font-weight:800;line-height:1;letter-spacing:-.02em}'+
-  '.mh span{font-size:8px;color:#8B95A3;margin-top:1mm}'+
-  '.mbar{display:flex;height:3.5mm;border-radius:99px;overflow:hidden}'+
+  '.mh b{font-size:24px;font-weight:700;line-height:1;letter-spacing:-.02em}'+
+  '.mh span{font-size:9.5px;color:#8B95A3;margin-top:5px}'+
+  '.mbar{display:flex;height:9px;border-radius:99px;overflow:hidden;margin-bottom:8px}'+
   /* exposiciones */
-  '.expc{margin-bottom:0}'+
-  '.expk{font-size:8.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#111827;padding-bottom:1.5mm;border-bottom:1px solid #E4E9F0;margin-bottom:2mm}'+
-  '.expb{padding:1.2mm 0;border-bottom:.4pt solid #F1F4F8}'+
-  '.expb:last-child{border-bottom:none}'+
-  '.expbh{display:flex;justify-content:space-between;gap:3mm;font-size:9.5px}'+
-  '.expbh span{font-weight:600;color:#1F2937}.expbh b{font-weight:700;color:#111827}'+
-  '.expbi{font-size:8px;color:#8B95A3;margin-top:.6mm;line-height:1.35}'+
-  /* gestión */
-  '.gl{list-style:none}'+
-  '.gl li{font-size:9.5px;color:#374151;padding:.9mm 0 .9mm 4mm;position:relative;line-height:1.4}'+
-  '.gl li:before{content:"";position:absolute;left:0;top:3.2mm;width:2mm;height:.5mm;background:'+acc+'}'+
-  '.gl li.na:before{background:#C6D0DC}'+
-  /* footer */
-  '.ft{margin-top:auto;padding:3mm 9mm 0;font-size:7.2px;color:#9CA3AF;line-height:1.45}'+
-  '.ft b{color:#5B6675;font-weight:700}'+
-  /* acciones */
-  '.act{position:fixed;top:14px;right:18px;display:flex;gap:7px;z-index:9}'+
-  '.act a,.act button{font-family:inherit;font-size:9.5px;font-weight:700;padding:7px 13px;border-radius:5px;cursor:pointer;text-decoration:none;border:1px solid #D5DCE6;background:#fff;color:#111827}'+
-  '.act .pr{background:#111827;color:#fff;border-color:#111827}'+
-  '@media print{body{background:#fff;padding:0}.pg{width:auto;min-height:auto;box-shadow:none}.act{display:none}}'+
+  '.xg{margin-bottom:14px}'+
+  '.xgk{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid #E4E9F0;margin-bottom:8px}'+
+  '.xb{padding:5px 0}'+
+  '.xbh{display:flex;justify-content:space-between;gap:10px;font-size:12px}'+
+  '.xbh span{font-weight:600}.xbh b{font-weight:700}'+
+  '.xbd{font-size:9.5px;color:#98A2AF;margin-top:2px;line-height:1.4}'+
+  '.xbd em{font-style:normal;color:#7A8492}'+
+  /* gestión + footer */
+  '.gest{padding:16px 46px;background:#F7F9FB;border-top:1px solid #E4E9F0}'+
+  '.gest ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:8px 30px}'+
+  '.gest li{font-size:11.5px;color:#3C4654;padding-left:14px;position:relative;line-height:1.45}'+
+  '.gest li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:2px;background:'+acc+'}'+
+  '.gest li.na:before{background:#C3CBD4}'+
+  '.ft{padding:12px 46px 16px;font-size:9px;color:#98A2AF;line-height:1.55;border-top:1px solid #E4E9F0}'+
+  '.ft b{color:#6B7684;font-weight:600}'+
+  '.act{position:fixed;top:22px;right:26px;display:flex;gap:8px;z-index:9}'+
+  '.act a,.act button{font-family:inherit;font-size:11px;font-weight:600;padding:9px 16px;border-radius:6px;cursor:pointer;text-decoration:none;border:1px solid #D5DCE6;background:#fff;color:#1A2233}'+
+  '.act .pr{background:#1A2233;color:#fff;border-color:#1A2233}'+
+  '@media print{body{background:#fff;padding:0}.sheet{width:297mm;height:209mm;margin:0}.act{display:none}}'+
   '</style></head><body>'+
   '<div class="act">'+(fs?'<a href="'+fs+'" target="_blank" rel="noopener">Abrir ficha oficial ↗</a>':'')+
-    '<button class="pr" onclick="window.print()">Imprimir / Guardar PDF</button></div>'+
-  '<div class="pg">'+
-  /* 01 identidad */
-  '<header class="hd"><div class="hd-top"><span class="hd-b">Reporte Dinámicos LVAM</span>'+
-    '<span class="hd-d">Cierre '+FUND_STATUS.closeMonth+'</span></div>'+
+    '<button class="pr" onclick="window.print()">Descargar PDF</button></div>'+
+  '<div class="sheet"><div class="accent"></div>'+
+  '<header class="hd"><div class="hd-l">'+
+    '<div class="hd-b">Reporte Dinámicos LVAM · Resumen ejecutivo</div>'+
     '<h1 class="hd-n">Fondo Dinámico '+pf.name+'</h1>'+
-    '<div class="hd-s">'+PC.sc.label+' · '+PC.vc.label+'</div>'+
-    '<p class="hd-o">'+pf.obj+'</p></header>'+
-  /* 02 datos clave */
+    '<div class="hd-m">'+PC.sc.label+'<i></i>'+PC.vc.label+'</div>'+
+    '<p class="hd-o">'+pf.obj+'</p></div>'+
+    '<div class="hd-r"><div class="hd-d">Cierre</div><div class="hd-dv">'+FUND_STATUS.closeMonth+'</div></div>'+
+  '</header>'+
   '<div class="kpi">'+
-    '<div><b>'+pf.horizon+'</b><span>Horizonte recomendado</span></div>'+
+    '<div><b>'+pf.horizon+'</b><span>Plazo recomendado</span></div>'+
     '<div><b>'+pf.riskNum+' de 7</b><span>Nivel de riesgo</span></div>'+
     '<div><b style="color:'+acc+'">'+lim.accMin+'–'+lim.accMax+'%</b><span>Rango de renta variable</span></div>'+
-    '<div><b>'+fee+'</b><span>Remuneración máxima anual</span></div></div>'+
-  /* 03 composición */
-  '<section class="sec"><div class="sk">Composición actual · '+FUND_STATUS.closeMonth+'</div>'+
-    '<div class="g2">'+
-      '<div class="dn"><svg viewBox="0 0 120 120">'+arcs+'</svg>'+
-        '<div class="dnl">'+segs.map(function(s){return '<span><i style="background:'+s.c+'"></i>'+s.n+'<b>'+s.v.toFixed(1).replace('.',',')+'%</b></span>';}).join('')+'</div></div>'+
-      '<div><div class="sk" style="margin-bottom:2.5mm">Exposición monetaria</div>'+
-        (cur?'<div class="stk">'+[{n:'Extranjera',v:cur.foreign,c:acc},{n:'CLP',v:cur.clp,c:'#7B8794'},{n:'UF',v:cur.uf,c:'#4E7C8A'}]
-          .filter(function(s){return s.v>0;}).map(function(s){return '<div style="width:'+s.v+'%;background:'+s.c+'">'+(s.v>=12?s.v.toFixed(1).replace('.',',')+'%':'')+'</div>';}).join('')+'</div>'+
-          '<div class="dnl">'+[{n:'Moneda extranjera',v:cur.foreign,c:acc},{n:'Pesos chilenos',v:cur.clp,c:'#7B8794'},{n:'UF',v:cur.uf,c:'#4E7C8A'}]
-          .filter(function(s){return s.v>0;}).map(function(s){return '<span><i style="background:'+s.c+'"></i>'+s.n+'<b>'+s.v.toFixed(1).replace('.',',')+'%</b></span>';}).join('')+'</div>'
-          :'<p class="na">Dato no disponible.</p>')+
-      '</div></div></section>'+
-  /* 04 rentabilidad */
-  '<section class="sec"><div class="sk">Rentabilidad nominal anualizada en CLP · '+PC.sc.label+'</div>'+
-    chart+
-    '<p class="note"><b>Rentabilidades nominales en pesos chilenos.</b> Calculadas de forma geométrica sobre los retornos mensuales de la serie seleccionada. Para 1 año corresponde al retorno de los últimos 12 meses; para períodos mayores, al retorno anualizado compuesto. Rentabilidades pasadas no garantizan rentabilidades futuras.</p></section>'+
-  /* 05 y 06 */
-  '<section class="sec"><div class="g2">'+
-    '<div><div class="sk">Comportamiento histórico</div>'+
-      '<div class="mh"><div><b>'+st.pos+'</b><span>Meses positivos</span></div>'+
-        '<div><b>'+st.neg+'</b><span>Meses negativos</span></div>'+
-        '<div><b>'+st.neu+'</b><span>Neutros</span></div>'+
-        '<div><b style="color:'+acc+'">'+st.pctPos.toFixed(1).replace('.',',')+'%</b><span>Positivos</span></div></div>'+
-      '<div class="mbar"><div style="width:'+(st.pos/st.total*100)+'%;background:#4E9B72"></div>'+
-        '<div style="width:'+(st.neg/st.total*100)+'%;background:#C0706A"></div>'+
-        (st.neu?'<div style="width:'+(st.neu/st.total*100)+'%;background:#CBD3DC"></div>':'')+'</div>'+
-      '<p class="note">Ene 2018 – '+MONTHS_LABELS[MONTHS_LABELS.length-1]+' · '+st.total+' meses.</p></div>'+
-    '<div><div class="sk">Principales exposiciones</div>'+expCol(rv,'Acc.','Renta variable')+
-      '<div style="height:2mm"></div>'+expCol(rf,'Deuda','Renta fija')+
-      '<p class="note">Instrumentos representativos. El porcentaje corresponde a la subclase, no al instrumento.</p></div>'+
-  '</div></section>'+
-  /* 07 gestión */
-  '<section class="sec"><div class="sk">Gestión del mes · '+FUND_STATUS.closeMonth+'</div>'+
-    '<ul class="gl">'+gest+'</ul></section>'+
-  /* 08 fuentes */
+    '<div><b>'+fee+'</b><span>Remuneración máxima anual</span></div>'+
+    '<div><b>'+pf.rv+'/'+pf.rf+'</b><span>Distribución estratégica RV / RF</span></div></div>'+
+  '<div class="body">'+
+    '<div class="col"><div class="gt">Composición del fondo</div>'+
+      '<div class="gs">Fondo Dinámico '+pf.name+' · '+PC.sc.label+' · cierre '+FUND_STATUS.closeMonth+'</div>'+
+      '<svg viewBox="0 0 340 268" class="dsvg" preserveAspectRatio="xMidYMid meet">'+aOut+aIn+labels+
+        '<text x="'+CX+'" y="'+(CY-4)+'" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="1.6" fill="#8B95A3">COMPOSICIÓN</text>'+
+        '<text x="'+CX+'" y="'+(CY+13)+'" text-anchor="middle" font-size="13" font-weight="700" fill="#1A2233">'+FUND_STATUS.closeMonth+'</text></svg>'+
+      '<div class="lg">'+inner.map(function(s){return '<span><i style="background:'+s.c+'"></i>'+s.n+'<b>'+s.v.toFixed(1).replace('.',',')+'%</b></span>';}).join('')+'</div>'+
+      '<div class="note">Anillo interior: clases de activo. Anillo exterior: subclases. Fuente: Reporte Dinámicos LVAM.</div></div>'+
+    '<div class="col"><div class="gt">Rentabilidad nominal anualizada en CLP</div>'+
+      '<div class="gs">Fondo Dinámico '+pf.name+' · '+PC.sc.label+' · cierre '+FUND_STATUS.closeMonth+'</div>'+
+      perf+
+      '<div class="note"><b>Rentabilidades nominales anualizadas en pesos chilenos.</b> Cálculo geométrico sobre retornos mensuales de la serie. Para 1 año, retorno de los últimos 12 meses; para períodos mayores, retorno anualizado compuesto. Rentabilidades pasadas no garantizan rentabilidades futuras.</div>'+
+      '<div style="margin-top:auto;padding-top:18px">'+
+        '<div class="gt">Comportamiento histórico</div>'+
+        '<div class="gs">Ene 2018 – '+MONTHS_LABELS[MONTHS_LABELS.length-1]+' · '+st.total+' meses · '+PC.sc.label+'</div>'+
+        '<div class="mh"><div><b>'+st.pos+'</b><span>Meses positivos</span></div>'+
+          '<div><b>'+st.neg+'</b><span>Meses negativos</span></div>'+
+          '<div><b>'+st.neu+'</b><span>Neutros</span></div>'+
+          '<div><b style="color:'+acc+'">'+st.pctPos.toFixed(1).replace('.',',')+'%</b><span>Positivos</span></div></div>'+
+        '<div class="mbar"><div style="width:'+(st.pos/st.total*100)+'%;background:#4E9B72"></div>'+
+          '<div style="width:'+(st.neg/st.total*100)+'%;background:#C0706A"></div>'+
+          (st.neu?'<div style="width:'+(st.neu/st.total*100)+'%;background:#CBD3DC"></div>':'')+'</div></div></div>'+
+    '<div class="col"><div class="gt">Principales exposiciones</div>'+
+      '<div class="gs">Cierre '+FUND_STATUS.closeMonth+'</div>'+
+      expOf(rv,'Acc.','Renta variable',acc)+expOf(rf,'Deuda','Renta fija','#6B7684')+
+      (ALp>0?expOf(al,'Alternativo','Alternativos','#4E7C8A'):'')+
+      '<div class="note" style="margin-top:auto">El porcentaje corresponde a la subclase de activo, no al instrumento individual.</div></div>'+
+  '</div>'+
+  '<div class="gest"><ul>'+gest+'</ul></div>'+
   '<footer class="ft"><b>Fuente:</b> Reporte Dinámicos LVAM · retornos mensuales de la '+PC.sc.label+' y composición al cierre de '+FUND_STATUS.closeMonth+' · LarrainVial Asset Management × Consorcio.'+
-    (fs?' Ficha oficial disponible en Reporte Dinámicos LVAM.':'')+'<br>'+
-    'Rentabilidades pasadas no garantizan rentabilidades futuras. Los valores cuota de los fondos mutuos son variables.<br>'+
-    'Documento informativo generado por Reporte Dinámicos LVAM. No constituye una recomendación de inversión ni reemplaza la ficha oficial del fondo.</footer>'+
+    (fs?' Ficha oficial disponible en Reporte Dinámicos LVAM.':'')+
+    ' Rentabilidades pasadas no garantizan rentabilidades futuras. Los valores cuota de los fondos mutuos son variables. Documento informativo; no constituye una recomendación de inversión ni reemplaza la ficha oficial del fondo.</footer>'+
   '</div></body></html>');
   w.document.close();
-  if(!v.ok) console.error('[Resumen] validación de horizontes:',v.errors);
+  if(!v.ok) console.error('[Resumen] validación:',v.errors);
 }
 
 function renderCompoCharts(){
